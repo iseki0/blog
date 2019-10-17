@@ -38,7 +38,7 @@ favicon: /img/favicon.ico
 # Highlight theme
 # ---------------
 highlight_theme: light
-highlight_copy: false #代碼複製按鈕
+highlight_copy: true #代碼複製按鈕
 highlight_lang: true #代碼語言顯示
 highlight_shrink: false #代碼框不展開，需點擊 '>' 打開
 
@@ -48,7 +48,7 @@ code_word_wrap: false
 # 是否禁止複製（如果禁止，highlight_copy的功能將無效)
 # copyright 複製的内容後面加上版權信息
 copy:
-  enable: false  # true 開啓 / false 禁止
+  enable: true  # true 開啓 / false 禁止
   copyright: false
 
 # social settings
@@ -131,7 +131,7 @@ cdn:
 # Post info settings
 # ---------------
 # avatar: /img/avatar.png
-avatar: https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png
+avatar: https://avatars3.githubusercontent.com/u/13687964?s=460&v=4
 
 # the banner image of index
 # if the banner of another page not setting,it will show the top_img
@@ -225,14 +225,14 @@ disqus:
   # client_id: 
   # client_secret: 
 
-# gitalk:
-#   enable: false
-#   client_id: 
-#   client_secret: 
-#   repo:
-#   owner:
-#   admin:
-#   language:   # en , zh-CN , zh-TW
+gitalk:
+  enable: true
+  client_id: 58a184d9d290fb2e309e
+  client_secret: 7e10274dc43d619bce6f0aabeed75b353dcce6a9
+  repo: blog
+  owner: cpdyj
+  admin: [cpdyj]
+  language: zh-CN  # en , zh-CN , zh-TW
 ####   Using this js for redirect to gitalk container after login
 ####   See https://github.com/gitalk/gitalk/issues/125
 #   js: https://cdn.jsdelivr.net/gh/upupming/gitalk@36368e5dffd049e956cdbbd751ff96c28d8255cf/dist/gitalk.min.js
@@ -253,7 +253,7 @@ valine:
 
 #####     Footer Settings    ####
 # ------------------------------------
-since: 2018
+since: 2019
 
 footer_custom_text:
 
@@ -423,8 +423,9 @@ hr:
 subtitle: 
   enable: true
   sub:
-    - 今日事&#44;今日畢
-    - Never put off till tomorrow what you can do today
+    - 这里是iseki的笔记本呢
+    # - 今日事&#44;今日畢
+    # - Never put off till tomorrow what you can do today
 
 
 
@@ -443,7 +444,7 @@ aside:
 
 # 網站公告
 announcement:
-  content: 感謝訪問本站，若喜歡請收藏 ^_^
+  content: 欢迎（x ^_^
 
 # busuanzi count for PV / UV in site
 # 訪問人數
