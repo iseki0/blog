@@ -1,0 +1,233 @@
+#nav
+  position: relative
+  margin-bottom: 1rem
+
+  &.full_page
+    height: $index_top_img_height
+  
+  .nav_bg
+    width: 100%
+    height: 100%
+    background-color: $light-blue
+    background-position: center
+    background-size: cover
+    background-attachment: local
+
+  &.not_index_bg
+    height: 20rem
+
+  #site-social-icons
+    margin: 0 auto
+    width: 15rem
+    text-align: center
+    display: none
+
+    .social-icon
+      margin: 0 0.5rem
+      color: $light-grey
+      text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
+      font-size: .9rem
+      cursor: pointer
+
+      &:hover
+        color: $white
+
+#site-info
+  position: absolute
+  width: 100%
+  top: $index_site_info_top
+
+#site-title,
+#site-sub-title
+  color: $light-grey
+  text-align: center
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
+  line-height: 1.5
+
+#site-title
+  font-weight: bold
+  font-size: 1.3rem
+
+#site-sub-title
+  font-size: 0.8rem
+
+#page_site-info
+  position: absolute
+  top: 10rem
+  width: 100%
+
+.scroll-down
+  position: absolute
+  bottom: 0
+  width: 100%
+  cursor: pointer
+  height: 42px
+  font-size: 30px
+  text-align: center
+
+  .scroll-down-effects
+    position: absolute
+    color: $white
+
+#header
+  position: relative
+
+#page-header
+  position: absolute
+  top: 0
+  z-index: 99
+  padding: 10px 36px
+  width: 100%
+  border: none
+  font-size: 18px
+  transition: all .3s
+
+  .toggle-menu
+    display: none
+    padding-top: 0.6rem
+    color: $light-grey
+    cursor: pointer
+
+    &:hover
+      color: $white
+  
+  a
+    color: $light-grey
+    text-decoration: none
+
+    &:hover
+      color: $white
+
+  &.fixed
+    position: fixed
+    top: -60px
+    z-index: 101
+    background: alpha($white, 0.8)
+    box-shadow: 0 5px 6px -5px alpha($grey, 0.6)
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+    &.open-sidebar
+      .site-page
+        display: none
+        opacity: 0
+
+    a,
+    #site-name,
+    .toggle-menu
+      color: $light-black
+      text-shadow: none
+
+      &:hover
+        color: $light-blue       
+
+  &.visible
+    transform: translate3d(0, 100%, 0)
+    transition: all .3s
+
+    .menus_item_child
+      background-color: $white !important
+
+      &:before
+        border-color: transparent transparent $white !important
+
+  #site-name
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
+    font-weight: bold
+    cursor: pointer
+
+  .menus_item
+    display: inline-block
+    padding: 0 0 0 0.7rem
+
+    &:hover,&:focus
+      .menus_item_child
+        display: block
+      
+      .menus-expand
+        transform: rotate(180deg) !important
+    
+    .menus-expand
+      padding: 4px        
+      transform: rotate(0deg)
+      transition: all .3s
+
+    .menus_item_child
+      position: absolute
+      background-color: alpha($white, 0.8)
+      padding: 8px 10px
+      border-radius: 5px
+      box-shadow: 0 5px 20px -4px rgba(0,0,0,.5)
+      display: none
+      opacity: 1
+      animation: sub_menus .3s .1s ease both
+
+      &:before
+        content: ""
+        position: absolute
+        top: -20px
+        left: 50%
+        margin-left: -10px
+        border-width: 10px
+        border-style: solid
+        border-color: transparent transparent alpha($white, 0.8)
+
+      li
+        list-style: none
+        text-align: center
+
+        a
+          color: #3b3a3a
+          text-shadow: none
+
+.site-page
+  position: relative
+  padding-bottom: 0.3rem
+  text-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 0.3)
+  font-size: 0.7rem
+  cursor: pointer
+
+  &::after
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: -1
+    width: 0
+    height: 3px
+    background-color: lighten($theme-color, 30%)
+    content: ""
+    transition: all 0.3s ease-in-out
+
+  &:hover
+    &::after
+      width: 100%
+
+
+@media screen and (min-width: $sm)  
+  #site-title
+    font-size: 2rem
+
+  #site-sub-title
+    font-size: 1.2rem
+
+
+@media screen and (max-width: $sm)
+  #page-header
+    padding: 10px 0.8rem
+
+    .menus
+      display: none
+
+    .toggle-menu
+      display: block
+
+    .search 
+      span
+        display none
+  
+@media screen and (max-width: $bg)
+  #page-header
+    &.fixed
+      &.open-sidebar
+        .site-page
+          display: inline-block
+          opacity: 1

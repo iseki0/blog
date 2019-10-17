@@ -1,0 +1,187 @@
+html
+  height: 100%
+  font-size: $rem
+
+body
+  position: relative
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  background: #fff
+  color: $font-black
+  font-size: $font-size
+  font-family: $font-family
+  line-height: $text-line-height
+
+  if !hexo-config('copy.enable')
+    user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+
+*::-webkit-scrollbar
+  width: 8px
+  height: 8px
+
+*::-webkit-scrollbar-thumb
+  background: $light-blue
+
+*::-webkit-scrollbar-track
+  background-color: transparent
+
+
+#web_bg
+  background: $web-bg
+  height: 100%
+  width: 100%
+  background-size: cover
+  position: fixed
+  z-index: -999
+  background-attachment: local
+  background-repeat: no-repeat
+  background-position: center
+  
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  position: relative
+  margin: 0.2rem 0
+  color: lighten($font-color, 15%)
+  font-weight: bold
+
+  code  
+    font-size: inherit !important
+
+#content-outer
+  flex: 1 auto
+
+*
+  box-sizing: border-box
+
+#content-inner
+  .img-alt
+    text-decoration: none
+    color: $a-link-color
+
+#toggle-sidebar
+  position: fixed
+  bottom: $sidebar-icon-top
+  left: $sidebar-icon-left
+  z-index: 100
+  font-size: $sidebar-icon-size
+  cursor: pointer
+  transition: all 0.2s
+  opacity: 0
+
+hr
+  position: relative
+  margin: 2rem auto
+  width: calc(100% - 4px)
+  border: 2px dashed $pale-blue
+  background: $white
+
+  &:hover
+    &:before
+      left: calc(95% - 20px)
+
+  &:before
+    position: absolute
+    top: $hr-icon-top
+    left: 5%
+    z-index: 1
+    color: $light-blue
+    content: $hr-icon
+    font: normal normal normal 14px / 1 FontAwesome
+    font-size: 20px
+    transition: all 1s ease-in-out
+
+// collapse/expand beautify
+details
+  padding: 0.3rem
+  border: 2px solid darken($light-grey, 10%)
+
+  summary
+    color: $theme-color
+
+// set <caption> of <figure> to center-align
+// use class="not-code" to avoid conflicts because code also use <figure> tag
+.not-code
+  margin: 0.5em
+  padding: 0.5em
+  border: thin silver solid
+  text-align: center
+
+table
+  overflow: auto
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+
+  thead
+    background: alpha($a-link-color, 10%)
+
+  th,
+  td
+    padding: 0.3rem 0.6rem
+    border: 1px solid darken($light-grey, 10%)
+    vertical-align: top
+
+*::selection
+  background: $selection
+  color: $pale-grey
+
+
+.full_page #site-title, 
+.full_page #site-sub-title, 
+#site-name,
+#aside_content .author-info__name,
+#aside_content .author-info__description
+  font-family: $site-name-font
+
+.is_right
+  text-align: right 
+
+.is_left
+  text-align: left
+
+.is_center
+  text-align: center
+
+.is_visible
+  display: block !important
+
+.is_invisible
+  display: none !important
+
+.is_hidden
+  overflow: hidden
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+.fireworks
+  position: fixed
+  z-index: -1
+  pointer-events: none
+
+// 去掉加載黑框
+img[src=""],img:not([src])
+  opacity: 0
+
+#body-wrap
+  transition: all .3s
+
+@media screen and (max-width: $bg)
+  i#toggle-sidebar,
+  #sidebar
+    display: none
+
+  body
+    padding-left: 0 !important

@@ -1,0 +1,57 @@
+name: Generate Hexo
+
+on:
+  push: 
+    paths: 
+      - 'source/**'
+
+jobs: 
+  build: 
+    name: Refresh
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js and NPM
+        run: |
+          sudo apt-get install curl -y
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt-get install nodejs -y
+          echo '=====Show NPM version====='
+          npm -v
+          echo '=====Show Node.js version====='
+          node -v
+      - name: Install Hexo
+        run: |
+          sudo npm install -g hexo-cli
+          echo '=====Show HEXO version====='
+          hexo -v
+      - name: Prepare Key and SSH config
+        run: |
+          mkdir ~/.ssh
+          echo $DEPLOY_PRIVKEY | base64 -d > ~/.ssh/id_rsa
+          chmod 0600 ~/.ssh/id_rsa
+          echo 'Host *' >> ~/.ssh/config
+          echo '    StrictHostKeyChecking no' >> ~/.ssh/config
+          chmod 0600 ~/.ssh/config
+        env: 
+          DEPLOY_PRIVKEY: ${{ secrets.DEPLOY_PRIVKEY }}
+      - name: Clone git repo
+        run: |
+          cd ~
+          echo '=====Show work path====='
+          pwd
+          git clone git@github.com:cpdyj/blog.git
+          cd blog
+          ls
+          echo '=====Show work path====='
+          pwd
+          cat ./package.json
+          npm install
+          npm audit fix
+          hexo clean
+          hexo g
+          echo "blog.iseki.space" > ./docs/CNAME
+          git config --global user.name "My Github Action"
+          git config --global user.email "no-reply@iseki.space"
+          git add docs
+          git commit -am "Auto generate on Github Action at `date`"
+          git push
