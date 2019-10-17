@@ -25,6 +25,7 @@ Host *
 
 6. 记得设定 `git config --global user.name/email` 否则无法提交
 7. 如果使用了自定义的域名，注意 `CNAME` 文件是否在 `hexo clean` 后被删除，可能需要自己写回去。
+9. 注意部分Hexo主题可能以 git submodule 方式引入， Github Action 克隆仓库时不会自动克隆子模块，导致生成的所有页面空白，Hexo只会给出警告而不是错误。
 
 
 ### 附上自己写的workflow（糊成一坨，凑合能用）
