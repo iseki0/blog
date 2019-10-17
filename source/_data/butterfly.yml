@@ -8,7 +8,7 @@
 menu:
   Home: / || fa fa-home
   Archives: /archives/ || fa fa-archive
-  # Tags: /tags/ || fa fa-tags
+  Tags: /tags/ || fa fa-tags
   # Categories: /categories/ || fa fa-folder-open
   # Link: /link/ || fa fa-link
   # About: /about/ || fa fa-heart

@@ -1,6 +1,7 @@
 ---
 title: 在GitHub Action里设置 Hexo gen 的折腾笔记
 date: 2019-10-17 22:44:00
+tags: [github,action,nodejs,npm,hexo]
 ---
 
 不想阅读Github Action厚重的文档，用预配置好的NPM Action折腾了半天，终以失败告终。由于不熟悉NPM和Node.js，最后爆出的错误摸不到头脑，就此作罢。

@@ -1,6 +1,7 @@
 ---
 title: 关于Kotlin注解处理器的一些坑
 date: 2019-10-14 00:34:14
+tags: [kotlin,kapt,java,idea,gradle]
 ---
 
 1. kapt 1.3.5 存在bug，不能用，连同 kotlin-gradle-plugin 一同降级到 1.3.41
