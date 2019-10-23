@@ -3,6 +3,8 @@ title: 话说我大Kotlin怎么连个throttle都没有呢
 date: 2019-10-23 15:54:00
 tags: [kotlin]
 ---
+
+# throttle
 既然没有，就自己写一个糊上去吧。
 总之，这东西的功能就是给函数调用加一个冷却时间。
 
@@ -22,7 +24,7 @@ fun throttle(threshhold: Long, lambda: () -> Unit) = run {
 }
 ```
 
-单元测试
+## Unit test
 
 ```kotlin
 class UtilKtTest {
@@ -39,4 +41,14 @@ class UtilKtTest {
         assertEquals(count, 2)
     }
 }
+```
+
+## Example
+
+```kotlin
+val fn = throttle(200) {
+    doSomething()
+}
+    
+fn.todo() //每次需要的时候调用下，如果距上次调用小于200ms，就什么也不会发生
 ```
