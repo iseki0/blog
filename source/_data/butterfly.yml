@@ -104,7 +104,7 @@ katex:
 # baidu_analytics: 
 
 #Google Analytics
-google_analytics:
+google_analytics: UA-150860594-1
 
 
 # stylesheets loaded in the <head>
@@ -133,7 +133,7 @@ cdn:
 # Post info settings
 # ---------------
 # avatar: /img/avatar.png
-avatar: https://avatars3.githubusercontent.com/u/13687964?s=460&v=4
+avatar: /img/avatar.png
 
 # the banner image of index
 # if the banner of another page not setting,it will show the top_img
@@ -272,7 +272,7 @@ ICP:
 ####    站長驗證    ####
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification:
+google_site_verification: nRI-JFYcRtbM0pDgvbRvsnwXB4oLa9lgb8m9XTq_x6Q
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
@@ -292,9 +292,9 @@ Flink:
   headline: 友情鏈接
   info_headline: 我的Blog資料
   name: Blog 名字： JerryC
-  address: Blog 地址： https://jerryc.me/
-  avatar: Blog 頭像： https://jerryc.me/img/avatar.png
-  info: Blog 簡介： 今日事,今日畢
+  address: Blog 地址： https://blog.iseki.space/
+  avatar: Blog 頭像： https://blog.iseki.space/img/avatar.png
+  info: 这里是iseki的笔记本呢
   comment: 如果需要交換友鏈,請留言
 
 # 打賞按鈕
