@@ -161,7 +161,7 @@ lodding_bg:
   post_page: /img/404.jpg
 
 post_meta:
-  date_type: both # or created or updated 文章日期是创建日或者更新日或都显示
+  date_type: created # or created or updated 文章日期是创建日或者更新日或都显示
   categories: true # or false 是否显示分类
   tags: true # or false 是否显示标签
 
