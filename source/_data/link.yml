@@ -1,0 +1,27 @@
+class:
+  class_name: 友情链接
+  link_list:
+    1:
+      name: counter2015
+      link: https://counter2015.com
+      avatar: https://avatars0.githubusercontent.com/u/13608862?s=460&v=4
+      descr: xxxxxxx
+#     2:
+#       name: xxxxxx
+#       link: https://www.xxxxxxcn/
+#       avatar: https://xxxxx/avatar.png
+#       descr: xxxxxxx  
+
+#  class2:
+#    class_name: 鏈接無效
+#    link_list:
+#      1:
+#        name: 夢xxx
+#        link: https://blog.xxx.com
+#        avatar: https://xxxx/avatar.png
+#        descr: xxxx
+#      2:
+#        name: xx
+#        link: https://www.axxxx.cn/
+#        avatar: https://x
+#        descr: xx
