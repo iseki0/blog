@@ -290,10 +290,10 @@ Flink:
   headline: 友情鏈接
   info_headline: 我的Blog資料
   name: Blog 名字： JerryC
-  address: Blog 地址： https://blog.iseki.space
+  address: Blog 地址： https://jerryc.me/
   avatar: Blog 頭像： https://jerryc.me/img/avatar.png
-  info: Blog 簡介： 这里是iseki的笔记本呢
-  comment: 咦~
+  info: Blog 簡介： 今日事,今日畢
+  comment: 如果需要交換友鏈,請留言
 
 # 打賞按鈕
 reward:
