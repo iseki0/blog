@@ -11,7 +11,7 @@ menu:
   Archives: /archives/ || fa fa-archive
   Tags: /tags/ || fa fa-tags
   # Categories: /categories/ || fa fa-folder-open
-  # Link: /link/ || fa fa-link
+  Link: /link/ || fa fa-link
   # About: /about/ || fa fa-heart
   Music: https://music.163.com/#/user/home?id=446315327 || fa fa-music
   # List||fa fa-list:
