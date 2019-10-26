@@ -132,8 +132,7 @@ cdn:
 
 # Post info settings
 # ---------------
-# avatar: /img/avatar.png
-avatar: /img/avatar.jpg 
+avatar: /img/avatar.png
 
 # the banner image of index
 # if the banner of another page not setting,it will show the top_img
@@ -293,7 +292,7 @@ Flink:
   info_headline: 我的Blog资料
   name: Blog 名字： isekiのNote
   address: Blog 地址： https://blog.iseki.space
-  avatar: Blog 頭像： 回头再说8
+  avatar: Blog 頭像： https://blog.iseki.space/img/avatar.png
   info: Blog 簡介： 咦~~~ 竟然有人来了
   comment: 
 
