@@ -14,7 +14,8 @@ class:
     3:
       name: MorningP
       descr: 一个技术弱鸡的碎碎念
-      link: https://blog.morningp.name/ 
+      link: https://blog.morningp.name/
+      avatar: /imgs/ogata_chieri.png 
 #     2:
 #       name: xxxxxx
 #       link: https://www.xxxxxxcn/
