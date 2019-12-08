@@ -136,7 +136,9 @@ avatar: /img/avatarx240.png
 
 # the banner image of index
 # if the banner of another page not setting,it will show the top_img
-top_img: https://i.loli.net/2019/05/22/5ce53eb6dc82757840.jpg
+# top_img: https://i.loli.net/2019/05/22/5ce53eb6dc82757840.jpg
+top_img: /img/topimg.jpg
+
 
 #the banner image of post
 # if the post not set the post cover and post top image, it will show it
@@ -292,8 +294,8 @@ Flink:
   info_headline: 我的Blog资料
   name: Blog 名字： isekiのNote
   address: Blog 地址： https://blog.iseki.space
-  avatar: Blog 頭像： https://blog.iseki.space/img/avatar.png
-  info: Blog 簡介： 咦~~~ 竟然有人来了
+  avatar: Blog 頭像： https://blog.iseki.space/img/avatar.png (其他尺寸 avatarx32.png && avatarx240.png)
+  info: Blog 簡介： 这里是 iseki 的笔记本呢~
   comment: 
 
 
@@ -446,7 +448,10 @@ aside:
 
 # 網站公告
 announcement:
-  content: 欢迎（x ^_^
+  content: |
+    欢迎（x ^_^
+
+    首页大图 PixivID 51788613 (Thank you~)
 
 # busuanzi count for PV / UV in site
 # 訪問人數
