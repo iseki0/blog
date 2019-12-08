@@ -1,5 +1,5 @@
 ---
-title: try-shadow-gradle-plugin
+title: 尝试使用 Gradle Shadow 插件
 date: 2019-12-08 18:27:59
 tags: [gradle,kotlin,jar]
 ---
