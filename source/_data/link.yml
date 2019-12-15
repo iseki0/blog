@@ -16,6 +16,12 @@ class:
       descr: 一个技术弱鸡的碎碎念
       link: https://blog.morningp.name/
       avatar: /imgs/ogata_chieri.png 
+    4:
+      name: ldeus
+      descr: 只是一个什么都做不到的普通人
+      link: https://blog.ldeus.com/
+      avatar: https://i.loli.net/2019/12/03/2RHDtyeMzvdUWmk.jpg
+
 #     2:
 #       name: xxxxxx
 #       link: https://www.xxxxxxcn/
