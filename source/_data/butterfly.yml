@@ -500,7 +500,7 @@ readmode:
 
 #百度推送
 baidu_push:
-  enable: true
+  enable: false
 
 # https://instant.page/
 # prefetch預加載
