@@ -1,9 +1,9 @@
 ---
 date: 2019-12-27 20:08:00
-title: 对 Java 中 happens-before 的复习
+title: 复习有关 happens-before rules
 tags: [jls,java,translate]
 ---
-# 对 Java 中 happens-before 的复习
+# Java 中的 happens-before 原则
 
 ### 以下内容翻译自节选 Oracle Java SE 7 语言规范(JLS) [Link>>>](https://docs.oracle.com/javase/specs/jls/se7/html/jls-17.html)
 
