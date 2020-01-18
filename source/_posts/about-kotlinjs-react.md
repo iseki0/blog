@@ -1,7 +1,7 @@
 ---
 title: 使用 gradle 构建 Kotlin React 应用
 date: 2020-01-10 00:13:14
-tags: [kotlin,react,kotlin-js,js,gradle]
+tags: [kotlin,react,kotlin-js,js,gradle ]
 ---
 # 使用 gradle 构建 Kotlin React 应用
 
