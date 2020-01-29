@@ -1,7 +1,7 @@
 ---
 title: 使用 gradle 构建 Kotlin React 应用
 date: 2020-01-10 00:13:14
-tags:
+tags: [kotlin,react,kotlin-js,js,gradle ]
 ---
 # 使用 gradle 构建 Kotlin React 应用
 
@@ -54,4 +54,4 @@ repositories {
 - https://www.npmjs.com/package/@jetbrains/kotlin-react
 - https://www.npmjs.com/package/@jetbrains/kotlin-react-dom
 
-可使用 `gradlew run` 拉起开发服务， `gradlew build` 开始生产构建
+可使用 `gradlew run / gradlew browserRun` 拉起开发服务， `gradlew browserWebpack` 开始生产构建
