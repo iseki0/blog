@@ -26,6 +26,11 @@ class:
       descr: 
       link: https://epliar.com/
       avatar: https://epliar.com/img/avatar.jpg
+    6:
+      name: 杯子萌
+      descr: 万物皆可萌
+      link: https://www.cupmoe.com
+      avatar: https://cdn.jsdelivr.net/gh/cutemoe/moepic/img/cover/toutu.jpg
 
 #     2:
 #       name: xxxxxx
