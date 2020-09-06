@@ -441,11 +441,11 @@
     
     
     
-      <category term="java" scheme="https://blog.iseki.space/tags/java/"/>
-    
       <category term="kotlin" scheme="https://blog.iseki.space/tags/kotlin/"/>
     
       <category term="gradle" scheme="https://blog.iseki.space/tags/gradle/"/>
+    
+      <category term="java" scheme="https://blog.iseki.space/tags/java/"/>
     
       <category term="kapt" scheme="https://blog.iseki.space/tags/kapt/"/>
     
