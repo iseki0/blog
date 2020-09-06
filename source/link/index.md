@@ -7,5 +7,15 @@ cover: /img/topimg.jpg
 
 # 关于我
 
-这里是iseki的笔记本呢
-头像可以在这里拿到：https://blog.iseki.space/img/avatar.png (其他尺寸 avatarx32.png && avatarx240.png)
+呐~ ~ ~ 这里是iseki的笔记本呢
+
+### 友链卡片
+
+Title: isekiのNote
+
+Description: 这里是iseki的笔记本呢
+
+Avatar: 多尺寸 
+- https://blog.iseki.space/img/avatar.png
+- https://blog.iseki.space/img/avatarx32.png
+- https://blog.iseki.space/img/avatarx240.png
