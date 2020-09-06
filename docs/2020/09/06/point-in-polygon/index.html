@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>判断多边形内点 | isekiのNote</title><meta name="description" content="判断多边形内点 本文节选翻译自：http:&#x2F;&#x2F;geomalgorithms.com&#x2F;a03-_inclusion.html ，部分图片重绘，文字亦加入了一些个人理解  有两种算法，卷绕数(Winding Number)和交叉数(Crossing Number)  Crossing Number: 点P画一条射线，计算其与多边形边界交叉数，当交叉数是奇数时，点在内部； Winding Number:"><meta name="author" content="iseki"><meta name="copyright" content="iseki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.iseki.space/2020/09/06/point-in-polygon/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="nRI-JFYcRtbM0pDgvbRvsnwXB4oLa9lgb8m9XTq_x6Q"/><meta property="og:type" content="article"><meta property="og:title" content="判断多边形内点"><meta property="og:url" content="https://blog.iseki.space/2020/09/06/point-in-polygon/"><meta property="og:site_name" content="isekiのNote"><meta property="og:description" content="判断多边形内点 本文节选翻译自：http:&#x2F;&#x2F;geomalgorithms.com&#x2F;a03-_inclusion.html ，部分图片重绘，文字亦加入了一些个人理解  有两种算法，卷绕数(Winding Number)和交叉数(Crossing Number)  Crossing Number: 点P画一条射线，计算其与多边形边界交叉数，当交叉数是奇数时，点在内部； Winding Number:"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-09-06T09:59:00.000Z"><meta property="article:modified_time" content="2020-09-06T16:24:04.788Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-150860594-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>判断多边形内点 | isekiのNote</title><meta name="description" content="判断多边形内点 本文节选翻译自：http:&#x2F;&#x2F;geomalgorithms.com&#x2F;a03-_inclusion.html ，部分图片重绘，文字亦加入了一些个人理解  有两种算法，卷绕数(Winding Number)和交叉数(Crossing Number)  Crossing Number: 点P画一条射线，计算其与多边形边界交叉数，当交叉数是奇数时，点在内部； Winding Number:"><meta name="author" content="iseki"><meta name="copyright" content="iseki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.iseki.space/2020/09/06/point-in-polygon/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="nRI-JFYcRtbM0pDgvbRvsnwXB4oLa9lgb8m9XTq_x6Q"/><meta property="og:type" content="article"><meta property="og:title" content="判断多边形内点"><meta property="og:url" content="https://blog.iseki.space/2020/09/06/point-in-polygon/"><meta property="og:site_name" content="isekiのNote"><meta property="og:description" content="判断多边形内点 本文节选翻译自：http:&#x2F;&#x2F;geomalgorithms.com&#x2F;a03-_inclusion.html ，部分图片重绘，文字亦加入了一些个人理解  有两种算法，卷绕数(Winding Number)和交叉数(Crossing Number)  Crossing Number: 点P画一条射线，计算其与多边形边界交叉数，当交叉数是奇数时，点在内部； Winding Number:"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-09-06T09:59:00.000Z"><meta property="article:modified_time" content="2020-09-06T16:32:17.826Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-150860594-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-150860594-1');
@@ -67,7 +67,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: false,
   isSidebar: true,
-  postUpdate: '2020-09-07 00:24:04'
+  postUpdate: '2020-09-07 00:32:17'
 }</script><noscript><style type="text/css">
 #nav {
   opacity: 1
@@ -131,7 +131,7 @@ if (autoChangeMode === '1') {
 <li>Crossing Number: 点P画一条射线，计算其与多边形边界交叉数，当交叉数是奇数时，点在内部；</li>
 <li>Winding Number: 计算多边形绕过点P的次数，只有卷绕数为0时点在内部</li>
 </ul>
-<p>如果一个多边形是简单的（无自交），两种方法对所有的点给出相同结果。但是对于一些复杂多变性，两种方法可能对一些点给出不同的结果，比如：当一个多边形叠加自身之上时，对于重叠区域的点，如果使用wn，则被认为是在多边形之外的，而cn则不是。见下图：</p>
+<p>如果一个多边形是简单的（无自交），两种方法对所有的点给出相同结果。但是对于一些复杂多边形，两种方法可能对一些点给出不同的结果，比如：当一个多边形叠加自身之上时，对于重叠区域的点，如果使用wn，则被认为是在多边形之外的，而cn则不是。见下图：</p>
 <p><img src="./cn0.svg" alt="Crossing Number"><img src="./wn0.svg" alt="Winding Number"></p>
 <p>在这个例子中，重叠区域的点 圈绕数 wn = 2，暗示着它被环绕在多边形中两次。明显，wn给出的答案更加直观。</p>
 <p>尽管如此，cn还是被使用得更加广泛，这是因为cn被错误的认为比wn更快（20倍）[O’Rourke, 1998]<br>但事实并非如此，通过带符号的计数，wn可以获得与cn同等的效率。事实上，我们的实现的 <code>wn_PnPoly()</code> 比[Franklin, 2000], [ Haines, 1994] 和 [O’Rourke, 1998]给出的cn更快！尽管[Moller &amp; Haines, 1999]实现的 <code>PointInPolygon()</code> 与我们的wn是差不多的，但综合考虑正确性和性能，wn是应该被首先推荐的。</p>
@@ -143,7 +143,7 @@ if (autoChangeMode === '1') {
 <p>一个朴素的 Crossing Number 算法实现是，点P向X轴的正方向延伸出一条与X轴平行的射线，使用这条特别的射线可以容易地计算其与多边形边的交叉，甚至当不可能存在交叉时，判断更加容易。要计算总的交叉数 $cn$ ，算法简单地枚举多边形的所有边并测试射线与之的交叉，并在交叉时改变 $cn$ 。特别的，交叉测试必须正确处理点在边上和其他特殊情况，遵守如下规则：</p>
 <h3 id="边交叉规则-Edge-Crossing-Rules"><a href="#边交叉规则-Edge-Crossing-Rules" class="headerlink" title="边交叉规则(Edge Crossing Rules)"></a>边交叉规则(Edge Crossing Rules)</h3><ol>
 <li>向上的边包含起始点而排除结束点</li>
-<li>向下的边排除结束点而包含起始点</li>
+<li>向下的边排除起始点而包含结束点</li>
 <li>排除水平边</li>
 <li>交点必须严格的出现在点P的右侧</li>
 </ol>
