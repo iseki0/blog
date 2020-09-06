@@ -1,47 +1,68 @@
 // https://github.com/equinusocio/vsc-material-theme
-@require "theme"
-@require "diff"
+$highlight_theme = hexo-config('highlight_theme')
+$highlighEnable = hexo-config('rootConfig.highlight') && hexo-config('rootConfig.highlight.enable')
+$prismjsEnable = hexo-config('rootConfig.prismjs') && hexo-config('rootConfig.prismjs.enable')
+wordWrap = !hexo-config('rootConfig.highlight.line_number') && hexo-config('code_word_wrap')
 
-wordWrap = !hexo-config("rootConfig.highlight.line_number") && hexo-config("code_word_wrap")
+@require 'theme'
+
+if $highlighEnable
+  @require 'highlight/index'
+
+if $prismjsEnable
+  @require 'prismjs/index'
 
 $code-block
   overflow: auto
-  margin: 1rem 0
+  margin: 0 0 1rem
   padding: 0
-  padding-top: 1.4rem
   background: $highlight-background
   color: $highlight-foreground
-  font-size: $code-font-size
   line-height: $line-height-code-block
 
   if wordWrap
     counter-reset: line
     white-space: pre-wrap
 
-figure.highlight
-  position: relative
-
 blockquote
-  margin: 0
-  padding: 0.1rem 0.8rem
-  border-left: 0.2rem solid $blockquote-padding-color
-  color: $blockquote-color
-  background-color: lighten($blockquote-padding-color,33)
+  margin: 0 0 1rem
+  padding: .1rem .8rem
+  border-left: .2rem solid $blockquote-padding-color
+  background-color: var(--blockquote-bg)
+  color: var(--blockquote-color)
 
-.article-container
+  a
+    word-break: break-all
+
+  p
+    margin: 0 !important
+    padding: .5rem 0
+
+  footer
+    padding: 0 0 .5rem
+
+    cite
+      &:before
+        padding: 0 .3em
+        content: '—'
+
+#article-container
   pre,
   code
-    font-family: $code-font !important
+    font-size: $code-font-size
+    font-family: $code-font-family !important
 
   code
-    padding: 0.1rem 0.2rem
+    padding: .1rem .2rem
     background: $code-background
     color: $code-foreground
     word-wrap: break-word
-    font-size: $code-font-size
+    word-break: break-word
+    overflow-wrap: break-word
 
   pre
     @extend $code-block
+    padding: 10px 20px
 
     code
       padding: 0
@@ -49,80 +70,20 @@ blockquote
       color: $highlight-foreground
       text-shadow: none
 
-  .highlight
+  figure.highlight
     @extend $code-block
     position: relative
-    border-radius: 1px
-
-    &:after
-      position: absolute
-      top: 0
-      z-index: 0
-      min-width: 100%
-      height: 1.4rem
-      background: darken($highlight-background, 5)
-      content: ""
 
     pre
       margin: 0
       padding: 8px 0
       border: none
 
-    .line
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-      if wordWrap
-        &:before
-          display: inline-block
-          padding: 0 0.3rem 0 0
-          min-width: 1.6rem
-          color: $highlight-gutter.color
-          content: counter(line)
-          counter-increment: line
-          text-align: left
-
-    table
-      position: relative
-      margin: 0
-      width: auto
-      border: none
-
-      if hexo-config('highlight_shrink') == true
-        display: none
-
-      &:after
-        position: absolute
-        top: -1.4rem
-        z-index: 0
-        width: 100%
-        height: 1.4rem
-        background: darken($highlight-background, 5)
-        content: ""
-
-    td
-      padding: 0
-      border: none
-
-    figcaption
-      clearfix()
-      position: absolute
-      z-index: 1
-      margin-bottom: 1em
-      padding: 0.2em 0 0.2em 0.7rem
-      width: 100%
-      height: 1.4em
-      color: $highlight-foreground
-      font-size: 1em
+    figcaption,
+    .caption
+      padding: .3rem 0 .1rem .7rem
+      font-size: $code-font-size
       line-height: 1em
-
-      span
-        float: left
-        overflow: hidden
-        max-width: 100%
-        text-overflow: ellipsis
-        white-space: nowrap
 
       a
         float: right
@@ -132,36 +93,56 @@ blockquote
         &:hover
           border-bottom-color: $highlight-foreground
 
-      &+table
-        margin-top: 1em
+  .highlight-tools
+    position: relative
+    display: flex
+    align-items: center
+    overflow: hidden
+    min-height: 1.2rem
+    height: 2.15em
+    background: $highlight-tools.bg-color
+    color: $highlight-tools.color
+    font-size: $code-font-size
 
-        &:before
-          margin-top: -2.1rem
+    &.closed + table
+      display: none
 
-        &:after
-          top: -2.1rem
+    .expand
+      position: absolute
+      padding: .4rem .7rem
+      cursor: pointer
+      transition: transform .3s
 
-    .gutter pre
-      padding-right: 0.5rem
-      padding-left: 0.5rem
-      background-color: $highlight-gutter.bg-color
-      color: $highlight-gutter.color
-      text-align: right
+      & + .code-lang
+        left: 1.7rem
 
-    .code pre
-      padding-right: 0.5rem
-      padding-left: 0.5rem
-      width: 100%
-      background-color: $highlight-background
+      &.closed
+        transition: all .3s
+        transform: rotate(-90deg) !important
 
-    .line
-      height: 1rem
+    .code-lang
+      position: absolute
+      left: .7rem
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 1.15em
+
+    .copy-notice
+      position: absolute
+      right: 1.7rem
+      opacity: 0
+
+    .copy-button
+      position: absolute
+      right: .7rem
+      cursor: pointer
+      transition: color .2s
+
+      &:hover
+        color: $theme-color
 
   .gutter
     user-select: none
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
 
   .gist table
     width: auto
@@ -169,112 +150,36 @@ blockquote
     td
       border: none
 
-  // For diff highlight
-  pre .deletion
-    background: $highlight-deletion
+  if $highlight_theme == 'mac' || ($highlight_theme == 'mac light')
+    figure.highlight
+      margin: 0 0 1.2rem
+      border-radius: 7px
+      box-shadow: 0 5px 10px 0 $highlight-mac-border
+      -webkit-transform: translateZ(0)
 
-  pre .addition
-    background: $highlight-addition
+      .highlight-tools
+        &:after
+          position: absolute
+          left: .7rem
+          width: 12px
+          height: 12px
+          border-radius: 50%
+          background: #fc625d
+          box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b
+          content: ' '
 
-  pre .meta
-    color: $highlight-purple
+        .expand
+          right: 0
 
-  pre
-    .comment
-      color: $highlight-comment
+          &.closed
+            transition: all .3s
+            transform: rotate(90deg) !important
 
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
+          & ~ .copy-notice
+            right: 2.8rem
 
-    .variable,
-    .attribute,
-    .regexp,
-    .ruby .constant,
-    .xml .tag .title,
-    .xml .pi,
-    .xml .doctype,
-    .html .doctype,
-    .css .id,
-    .tag .name,
-    .css .class,
-    .css .pseudo
-      color: $highlight-red
+          & ~ .copy-button
+            right: 1.8rem
 
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .tag
-      color: $highlight-aqua
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .number,
-    .preprocessor,
-    .literal,
-    .params,
-    .constant,
-    .command
-      color: $highlight-orange
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .built_in
-      color: $highlight-yellow
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .ruby .class .title,
-    .css .rules .attribute,
-    .string,
-    .value,
-    .inheritance,
-    .header,
-    .ruby .symbol,
-    .xml .cdata,
-    .special,
-    .number,
-    .formula
-      color: $highlight-green
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .keyword,
-    .title,
-    .css .hexcolor
-      color: $highlight-aqua
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .function,
-    .python .decorator,
-    .python .title,
-    .ruby .function .title,
-    .ruby .title .keyword,
-    .perl .sub,
-    .javascript .title,
-    .coffeescript .title
-      color: $highlight-blue
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
-
-    .tag .attr,
-    .javascript .function
-      color: $highlight-purple
-
-      &::selection
-        background: $highlight-selection
-        color: $highlight-foreground
+        .code-lang
+          left: 3.8rem !important

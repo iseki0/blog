@@ -1,37 +1,96 @@
 # hexo-theme-butterfly
 
-[预览](https://jerryc.me/)
+![version](https://img.shields.io/github/package-json/v/jerryc127/hexo-theme-butterfly)
+![https://img.shields.io/npm/v/hexo-theme-butterfly?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-butterfly?color=%09%23bf00ff)
+![hexo version](https://img.shields.io/badge/hexo-4.2+-0e83c)
+![npm download](https://img.shields.io/npm/dw/hexo-theme-butterfly?color=green)
+![license](https://img.shields.io/github/license/jerryc127/hexo-theme-butterfly?color=FF5531)
 
-一款基于[hexo-theme-melody](https://github.com/Molunerfinn/hexo-theme-melody)修改的主题
+Demo: 👍 [Butterfly](https://demo.jerryc.me/)  ||   🤞 [JerryC](https://jerryc.me/)
 
-## 安装
+Docs: 📖 [Butterfly Docs](https://demo.jerryc.me/posts/21cfbf15/)
 
-在你的博客根目录里
+Based on [hexo-theme-melody](https://github.com/Molunerfinn/hexo-theme-melody) theme.
 
-```
-git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
-```
+## Installation
 
-如果想要安裝比較新的dev分支，可以
+### GIT
 
-```
-git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
-```
-
-## 应用主题
-修改hexo配置文件`_config.yml`，把主题改为`Butterfly`
+Stable branch [recommend]:
 
 ```
-theme: Butterfly
+git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
 ```
 
->如果你没有pug以及stylus的渲染器，请下载安装： npm install hexo-renderer-jade hexo-renderer-stylus --save or yarn add hexo-renderer-jade hexo-renderer-stylus
+Dev branch:
 
-## 文档
+```
+git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+```
 
-可查看或[这里](https://docs.jerryc.me/)或[这里](https://jerryc.me/posts/21cfbf15)
+### NPM
 
+> It supports Hexo 5.0.0 or later
 
-## 截图
-![image](https://user-images.githubusercontent.com/16351105/58887365-1272f780-8718-11e9-9329-3292c6ba20d4.png)
-![image](https://user-images.githubusercontent.com/16351105/58887457-3cc4b500-8718-11e9-9417-2bdea603c92e.png)
+In Hexo site root directory 
+
+```powershell
+npm i hexo-theme-butterfly
+```
+
+## Configuration
+
+ Set theme in the hexo work folder's root config file `_config.yml`: 
+
+> theme: butterfly
+
+ If you don't have pug & stylus renderer, try this: 
+
+> npm install hexo-renderer-pug hexo-renderer-stylus
+
+## Features
+
+- [x] Card UI Design
+- [X] Support sub-menu
+- [x] Two Column designs
+- [x] Responsive Web Design
+- [x] Dark Mode
+- [x] Pjax
+- [x] Read Mode
+- [x] Conversion between Traditional and Simplified Chinese
+- [X] TOC catalog is available for both computers and mobile phones
+- [X] Color themes (darker/pale night/light/ocean/mac/mac light), support custom colors
+- [X] Code Blocks (Display code language/close or expand Code Blocks/Copy Button/word wrap)
+- [X] Disable copy/Add a Copyright Notice to the Copied Text
+- [X] Search (Algolia SearchZ/Local Search)
+- [x] Mathjax and Katex
+- [x] Built-in 404 page
+- [x] WordCount
+- [x] Related articles
+- [x] Displays outdated notice for a post
+- [x] Share (AddThis/Sharejs/Addtoany)
+- [X] Comment (Disqus/Disqusjs/Livere/Gitalk/Valine/Utterances/Facebook Comments)
+- [x] Multiple Comment System Support
+- [x] Online Chats (Chatra/Tidio/Daovoice/Gitter/Crisp)
+- [x] Web analytics (Baidu Analytics/Google Analytics/Tencent Analytics/CNZZ Analytics)
+- [x] Google AdSense
+- [x] Webmaster Verification (google/Bing/Baidu/360/Yandex)
+- [x] Change website colour scheme
+- [x] Typewriter Effect: activate_power_mode
+- [x] Background effects (Canvas ribbon/canvas_ribbon_piao/canvas_nest)
+- [x] Mouse click effects (Fireworks/Heart/Text)
+- [x] Preloader/Loading Animation
+- [x] Busuanzi visitor counter
+- [x] Medium Zoom/Fancybox
+- [x] Mermaid
+- [x] Justified Gallery
+- [x] Lazyload images
+- [x] Instantpage/Pangu/Snackbar notification toast/PWA......
+
+## Screenshots
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/theme-butterfly-readme-homepage-1.png)
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/theme-butterfly-readme-homepage-2.png)
+
+![](https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/theme-butterfly-readme-post.png)
