@@ -1,76 +1,65 @@
-#post-comment
-  .comment-head
-    margin-bottom: 1rem
+#disqus_thread
+  margin-top: 1rem
 
-    .comment-headline
-      display: inline-block
-      vertical-align: middle
-      font-weight: 700
-      font-size: 1.43em
+.comment_headling
+  font-size: 20px
+  font-weight: 700
+  margin-bottom: 10px
 
-    .comment-switch
-      display: inline-block
+// valine 
+#vcomment
+  font-size: inherit
+  
+  input 
+    font-size: 0.65rem
 
-      if hexo-config('comments.text')
-        float: right
-        margin: .1rem auto 0
-        padding: .2rem .8rem
-        width: max-content
-        border-radius: 8px
-        background: $comments-switch-bg
-      else
-        vertical-align: middle
+  button 
+    font-size: .7rem
+    padding: .3rem 1rem
+    background-color: $light-blue
+    color: #fff
+    border-color: #fff
 
-        > span
-          display: none
+    &:hover
+      background-color: darken($light-blue, 40)
 
-      .first-comment
-        color: $comments-switch-first-text
+  textarea 
+    font-size: 0.7rem
+    if hexo-config("valine.bg")
+      background: url(convert(hexo-config("valine.bg"))) 100% 100% no-repeat
 
-      .second-comment
-        color: $comments-switch-second-text
+  .info
+    display: none
+  
+  .vimg
+    border: 0
 
-      label
-        position: relative
-        display: inline-block
-        margin: -4px .4rem 0
-        width: 42px
-        height: 22px
-        vertical-align: middle
+    &:hover
+      transform: rotate(540deg)
+  .vcount
+    font-size: 0.775rem
 
-        input#switch-comments-btn
-          width: 0
-          height: 0
-          opacity: 0
+  .vnum 
+    font-size: 1.1rem
 
-          &:checked + .slider
-            background-color: $comments-switch-second-text
+  .vsys
+    font-size: 80%
+  
+  .vtime
+    font-size: .65rem
+  
+  .vcontent
+    font-size: 100%
+  
+  .vat
+    font-size: .7125rem
+    color: $cyan
+    border: 1px solid $cyan
+    padding: 0 .8rem
+    border-radius: 5px
 
-          &:checked + .slider:before
-            transform: translateX(20px)
-
-        .slider
-          position: absolute
-          top: 0
-          right: 0
-          bottom: 0
-          left: 0
-          border-radius: 34px
-          background-color: $comments-switch-first-text
-          cursor: pointer
-          transition: .4s
-
-          &:before
-            position: absolute
-            bottom: 4px
-            left: 4px
-            width: 14px
-            height: 14px
-            border-radius: 50%
-            background-color: $comments-switch-round
-            content: ''
-            transition: .4s
-
-  .comment-wrap
-    > div:nth-child(2)
-      display: none
+    &:hover
+      background-color: alpha($cyan,0.5)
+  
+  code, pre
+    font-size: 98%

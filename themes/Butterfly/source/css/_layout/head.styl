@@ -1,326 +1,233 @@
-#page-header
+#nav
   position: relative
-  width: 100%
-  background-color: $light-blue
-  background-attachment: scroll
-  background-position: center center
-  background-size: cover
-  background-repeat: no-repeat
-  transition: all .5s
+  margin-bottom: 1rem
 
-  // index
   &.full_page
     height: $index_top_img_height
-    background-attachment: fixed
+  
+  .nav_bg
+    width: 100%
+    height: 100%
+    background-color: $light-blue
+    background-position: center
+    background-size: cover
+    background-attachment: local
 
-    #site-info
-      position: absolute
-      top: $index_site_info_top
-      padding: 0 .5rem
-      width: 100%
+  &.not_index_bg
+    height: 20rem
 
-  #site_title,
-  #site_subtitle,
-  #scroll_down .scroll-down-effects
-    text-align: center
-    text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .15)
-    line-height: 1.5
-
-  #site_title
-    margin: 0
-    color: var(--white)
-    font-size: 1.85em
-
-    +minWidth768()
-      font-size: 2.85em
-
-  #site_subtitle
-    color: var(--light-grey)
-    font-size: 1.15em
-
-    +minWidth768()
-      font-size: 1.72em
-
-  #site_social_icons
-    display: none
+  #site-social-icons
     margin: 0 auto
     width: 15rem
     text-align: center
-
-    +maxWidth768()
-      display: block
+    display: none
 
     .social-icon
-      margin: 0 .5rem
-      color: var(--light-grey)
-      text-shadow: .1rem .1rem .2rem rgba(0, 0, 0, .15)
-      font-size: 1.43em
+      margin: 0 0.5rem
+      color: $light-grey
+      text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
+      font-size: .9rem
       cursor: pointer
 
-  #scroll_down
+      &:hover
+        color: $white
+
+#site-info
+  position: absolute
+  width: 100%
+  top: $index_site_info_top
+
+#site-title,
+#site-sub-title
+  color: $light-grey
+  text-align: center
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
+  line-height: 1.5
+
+#site-title
+  font-weight: bold
+  font-size: 1.3rem
+
+#site-sub-title
+  font-size: 0.8rem
+
+#page_site-info
+  position: absolute
+  top: 10rem
+  width: 100%
+
+.scroll-down
+  position: absolute
+  bottom: 0
+  width: 100%
+  cursor: pointer
+  height: 42px
+  font-size: 30px
+  text-align: center
+
+  .scroll-down-effects
     position: absolute
-    bottom: 0
-    width: 100%
-    cursor: pointer
+    color: $white
 
-    .scroll-down-effects
-      position: relative
-      width: 100%
-      color: var(--light-grey)
-      font-size: 30px
+#header
+  position: relative
 
-  // page
-  &.not-index-bg
-    height: 20rem
-
-    +maxWidth768()
-      height: 14rem
-
-  #page_site-info
-    position: absolute
-    top: 10rem
-    padding: 0 .5rem
-    width: 100%
-
-    +maxWidth768()
-      top: 7rem
-
-  // post
-  &.post-bg
-    height: 20rem
-
-    +maxWidth768()
-      height: 18rem
-
-    &:before
-      position: absolute
-      top: 0
-      left: 0
-      display: block
-      width: 100%
-      height: 100%
-      background-color: alpha($dark-black, .5)
-      content: ''
-
-    #post-info
-      position: absolute
-      bottom: 1.5rem
-      padding: 0 8%
-      width: 100%
-      text-align: left
-
-      +maxWidth768()
-        bottom: 1.1rem
-        padding: 0 1.1rem
-
-      #post-title
-        margin-bottom: .4rem
-        font-size: 2.15em
-
-        +maxWidth768()
-          font-size: 1.72em
-
-        .posttitle
-          @extend .limit-more-line
-          color: var(--white)
-          line-height: 1.5
-          -webkit-line-clamp: 3
-
-      #post-meta
-        color: var(--light-grey)
-        font-size: 95%
-
-        +minWidth768()
-          > .meta-secondline
-            > span:first-child
-              display: none
-
-        +maxWidth768()
-          font-size: 90%
-
-          > .meta-firstline,
-          > .meta-secondline
-            display: inline
-
-        .post-meta
-          &-separator
-            margin: 0 .25rem
-
-          &-icon
-            margin-right: .2rem
-
-          &-label
-            if hexo-config('post_meta.post.label')
-              margin-right: .2rem
-            else
-              display: none
-
-        a
-          color: var(--light-grey)
-          transition: all .3s ease-out
-
-          &:hover
-            color: $text-hover
-            text-decoration: underline
-
-// css hack
-// all browser in ios and safari in all apple device
-_::-webkit-full-page-media,
-_:future,
-:root #page-header.full_page
-  background-attachment: scroll !important
-
-#nav
+#page-header
   position: absolute
   top: 0
-  z-index: 90
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  padding: 0 36px
+  z-index: 99
+  padding: 10px 36px
   width: 100%
-  height: 60px
-  font-size: 1.3em
-  opacity: 0
-  transition: all .5s
+  border: none
+  font-size: 18px
+  transition: all .3s
 
-  +maxWidth768()
-    padding: 0 16px
-
-  &:not(.fixed)
-    #menus
-      padding-right: 0 !important
-
-  #blog_name
-    flex: 1
-
-  #toggle-menu
+  .toggle-menu
     display: none
-    padding: .1rem 0 0 .3rem
-    vertical-align: top
+    padding-top: 0.6rem
+    color: $light-grey
+    cursor: pointer
 
     &:hover
-      color: var(--white)
-
+      color: $white
+  
   a
-    color: var(--light-grey)
+    color: $light-grey
+    text-decoration: none
 
     &:hover
-      color: var(--white)
+      color: $white
 
   &.fixed
     position: fixed
-    top: -62px
-    z-index: 91
-    background: rgba(255, 255, 255, .8)
-    box-shadow: 0 5px 6px -5px alpha($grey, .6)
-    transition: transform .2s ease-in-out, opacity .2s ease-in-out
+    top: -60px
+    z-index: 101
+    background: alpha($white, 0.8)
+    box-shadow: 0 5px 6px -5px alpha($grey, 0.6)
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+
+    &.open-sidebar
+      .site-page
+        display: none
+        opacity: 0
 
     a,
     #site-name,
-    #toggle-menu
-      color: var(--font-color)
+    .toggle-menu
+      color: $light-black
       text-shadow: none
 
       &:hover
-        color: $light-blue
+        color: $light-blue       
 
   &.visible
-    transition: all .5s
     transform: translate3d(0, 100%, 0)
+    transition: all .3s
+
+    .menus_item_child
+      background-color: $white !important
+
+      &:before
+        border-color: transparent transparent $white !important
 
   #site-name
-    text-shadow: .1rem .1rem .2rem rgba($dark-black, .15)
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15)
     font-weight: bold
     cursor: pointer
 
-  .menus_items
-    display: inline
+  .menus_item
+    display: inline-block
+    padding: 0 0 0 0.7rem
 
-    .menus_item
-      position: relative
-      display: inline-block
-      padding: 0 0 0 .7rem
-
-      &:hover
-        .menus_item_child
-          display: block
-
-        i.expand
-          transform: rotate(180deg) !important
-
-      i.expand
-        padding: 4px
-        transition: transform .3s
-
-      & > a
-        &:after
-          position: absolute
-          bottom: 0
-          left: 0
-          z-index: -1
-          width: 0
-          height: 3px
-          background-color: lighten($theme-color, 30%)
-          content: ''
-          transition: all .3s ease-in-out
-
-        &:hover
-          &:after
-            width: 100%
-
+    &:hover,&:focus
       .menus_item_child
+        display: block
+      
+      .menus-expand
+        transform: rotate(180deg) !important
+    
+    .menus-expand
+      padding: 4px        
+      transform: rotate(0deg)
+      transition: all .3s
+
+    .menus_item_child
+      position: absolute
+      background-color: alpha($white, 0.8)
+      padding: 8px 10px
+      border-radius: 5px
+      box-shadow: 0 5px 20px -4px rgba(0,0,0,.5)
+      display: none
+      opacity: 1
+      animation: sub_menus .3s .1s ease both
+
+      &:before
+        content: ""
         position: absolute
-        right: 0
-        display: none
-        margin-top: 8px
-        padding: 0
-        width: max-content
-        background-color: var(--sidebar-bg)
-        box-shadow: 0 5px 20px -4px rgba($dark-black, .5)
-        animation: sub_menus .3s .1s ease both
+        top: -20px
+        left: 50%
+        margin-left: -10px
+        border-width: 10px
+        border-style: solid
+        border-color: transparent transparent alpha($white, 0.8)
 
-        &:before
-          position: absolute
-          top: -8px
-          left: 0
-          width: 100%
-          height: 20px
-          content: ''
+      li
+        list-style: none
+        text-align: center
 
-        li
-          list-style: none
+        a
+          color: #3b3a3a
+          text-shadow: none
 
-          &:hover
-            background: var(--text-bg-hover)
+.site-page
+  position: relative
+  padding-bottom: 0.3rem
+  text-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 0.3)
+  font-size: 0.7rem
+  cursor: pointer
 
-          a
-            display: inline-block
-            padding: .3rem .7rem
-            width: 100%
-            color: var(--font-color)
-            text-shadow: none
+  &::after
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: -1
+    width: 0
+    height: 3px
+    background-color: lighten($theme-color, 30%)
+    content: ""
+    transition: all 0.3s ease-in-out
 
-  &.hide-menu
-    #toggle-menu
-      display: inline-block !important
+  &:hover
+    &::after
+      width: 100%
 
-      .site-page
-        font-size: inherit
 
-    .menus_items
-      display: none !important
+@media screen and (min-width: $sm)  
+  #site-title
+    font-size: 2rem
 
-    #search_button span
-      display: none !important
+  #site-sub-title
+    font-size: 1.2rem
 
-  #search_button
-    display: inline
-    padding: 0 0 0 .7rem
 
-  .site-page
-    position: relative
-    padding-bottom: .3rem
-    text-shadow: .05rem .05rem .1rem rgba($dark-black, .3)
-    font-size: .78em
-    cursor: pointer
+@media screen and (max-width: $sm)
+  #page-header
+    padding: 10px 0.8rem
+
+    .menus
+      display: none
+
+    .toggle-menu
+      display: block
+
+    .search 
+      span
+        display none
+  
+@media screen and (max-width: $bg)
+  #page-header
+    &.fixed
+      &.open-sidebar
+        .site-page
+          display: inline-block
+          opacity: 1

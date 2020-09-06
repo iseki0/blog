@@ -1,0 +1,343 @@
+galleryItemStyle(w, h)
+  .gallery
+    &-item
+      width: w
+      height: unit(h, "rem")
+
+      &__title
+        transform: translate3d(0, unit(h, "rem"), 0)
+
+      &:hover
+        .gallery-item__title
+          transform: translate3d(0, unit(h - 1.5, "rem"), 0)
+
+.recent-post-item
+  .content
+    margin-top: 0.5rem
+
+    p
+      word-break: break-word
+
+
+    ol,
+    ul
+      margin-top: 0.4rem
+      padding: 0 0 0 0.8rem
+      list-style: none
+      counter-reset: li
+
+      p
+        margin: 0
+
+      ol,
+      ul
+        padding-left: 0.5rem
+
+      li
+        position: relative
+        margin: 0.2rem 0
+        padding: 0.1rem 0.5rem 0.1rem 1.5rem
+
+        &:hover
+          &:before
+            transform: rotate(360deg)
+
+        &:before
+          position: absolute
+          top: 0
+          left: 0
+          background: $light-blue
+          color: $white
+          cursor: pointer
+          transition: all 0.3s ease-out
+
+    ol
+      li
+        &:before
+          margin-top: 0.2rem
+          width: w = 1.2rem
+          height: h = w
+          border-radius: 0.5 * w
+          content: counter(li)
+          counter-increment: li
+          text-align: center
+          font-size: 0.6rem
+          line-height: h
+
+    ul
+      li
+        &:hover
+          &:before
+            border-color: $ruby
+
+        &:before
+          $w = 0.3rem
+          top: 10px
+          margin-left: 0.45rem
+          width: w = $w
+          height: h = w
+          border: 0.5 * w solid $light-blue
+          border-radius: w
+          background: $white
+          content: ""
+          line-height: h
+
+  .article-type
+    margin-left: 0.3rem
+    color: $grey
+
+  .article-meta
+    color: $grey
+
+    .sticky
+      color: $theme-button-hover-color
+
+    i
+      margin: 0 0.2rem 0 0.3rem
+
+    &__separator
+      margin-left: 0.3rem
+
+    .fa-angle-right,
+    &__link
+      margin: 0 0 0 0.3rem
+
+  time
+    color: $grey
+
+  .article-title
+    margin-bottom: 0.3rem
+    color: $black
+    text-decoration: none
+    font-size: 1.2rem
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+    line-height: 1.4
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 2
+    overflow: hidden
+    word-wrap: break-word
+
+    &:hover
+      // border-bottom: 1px solid $light-blue
+      color: $light-blue !important
+
+.tag-cloud
+  padding: 40px 44px 44px
+
+  a
+    display: inline-block
+    margin: 0 0.4rem
+    text-decoration: none
+    cursor: pointer
+    transition: all .3s
+
+    &:hover
+      color: $ruby !important
+      transform: scale(1.1)
+
+  &__title
+    font-size: 1.8rem
+    text-align: center
+
+  &-tags
+    text-align: center
+
+#tag,
+#category,
+#archive
+  padding: 3rem 3rem 3rem
+
+.article-sort
+  padding-left: 1rem
+  border-left: 2px solid $pale-blue
+
+  &-title
+    position: relative
+    padding-bottom: 1.2rem
+    padding-left: 1rem
+    font-size: 1.2rem
+    line-height: 1
+
+    &:hover
+      &:before
+        border-color: $ruby
+
+    &:before
+      position: absolute
+      top: 0.25rem
+      left: calc(-0.5rem + 1px)
+      z-index: 1
+      width: w = 0.5rem
+      height: h = w
+      border: 0.5 * w solid $light-blue
+      border-radius: w
+      background: $white
+      content: ""
+      line-height: h
+      transition: all 0.2s ease-in-out
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: 0
+      width: 0.1rem
+      height: 1.3rem
+      background: $pale-blue
+      content: ""
+
+  &-item
+    position: relative
+    margin: 0 0 1rem 0.5rem
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      &:before
+        border-color: $ruby
+
+    &:before
+      $w = 0.3rem
+      position: absolute
+      top: 1.8rem
+      left: calc(-1rem - 17px)
+      width: w = $w
+      height: h = w
+      border: 0.5 * w solid $light-blue
+      border-radius: w
+      background: $white
+      content: ""
+      line-height: h
+      transition: all 0.2s ease-in-out
+
+    &.year
+      font-size: 1rem
+
+      &:hover
+        &:before
+          border-color: $light-blue
+
+      &:before
+        top: 0.7rem
+        border-color: $ruby
+    
+    &__time
+      color: $a-link-color
+      font-size: 0.7rem
+      padding-left: 0.4rem
+
+    &__title
+      color: $font-black
+      font-size: 0.75rem
+      height: 60px
+      overflow: hidden
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      transition: all .3s
+
+      &:hover
+        color: $light-blue
+        transform: translateX(20px)
+    
+    &__img
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        padding: 0
+        transition: all .6s
+      
+        &:hover
+          transform: scale(1.1)
+
+    &__post
+      text-decoration: none
+      cursor: pointer
+
+      &:hover
+        color: $a-link-color
+
+  &-img
+    height: 80px
+    width: 80px
+    display: inline-block
+    overflow: hidden
+  
+  &-post
+    display: inline-block
+    top: 0
+    position: absolute
+    margin-left: 1rem
+
+
+.category-lists
+  padding: 1rem 0 1.5rem
+
+  .category__title
+    text-align: center
+    font-size: 1.8rem
+
+.category-list
+  a
+    color: $font-black
+    text-decoration: none
+    cursor: pointer
+
+  .category-list-count
+    margin-left: 0.4rem
+    color: $a-link-color
+
+    &:before
+      content: "("
+
+    &:after
+      content: ")"
+
+.gallery
+  &-item
+    position: relative
+    display: inline-block
+    overflow: hidden
+    margin: 0.4rem
+    width: 6rem
+    height: 6rem
+    background-position: 50% 50%
+    background-size: cover
+    background-repeat: no-repeat
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+
+    &__title
+      position: absolute
+      overflow: hidden
+      padding: 0 0.4rem
+      width: 100%
+      height: 1.5rem
+      background: rgba(0, 0, 0, 0.5)
+      color: $pale-blue
+      text-align: center
+      text-overflow: ellipsis
+      white-space: nowrap
+      line-height: 1.5rem
+      transition: 0.2s ease-in-out
+      transform: translate3d(0, 6rem, 0)
+
+    &:hover
+      .gallery-item__title
+        transform: translate3d(0, 4.5rem, 0)
+
+@media screen and (max-width: $sm)
+  .recent-post-item
+    .article-title
+      font-size: 1rem
+
+    .article-meta.tags
+      display: none
+
+  galleryItemStyle(calc(50% - 22px), 6)
+
+@media screen and (min-width: $md)
+  galleryItemStyle(8rem, 8)
