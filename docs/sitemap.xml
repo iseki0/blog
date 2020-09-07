@@ -16,20 +16,6 @@
   </url>
   
   <url>
-    <loc>https://blog.iseki.space/2019/12/08/use-shadow-gradle-plugin-gen-fatjar/</loc>
-    
-    <lastmod>2020-09-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iseki.space/2020/04/12/write-codegen-in-gradle/</loc>
-    
-    <lastmod>2020-09-07</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iseki.space/2020/01/09/about-kotlinjs-react/</loc>
     
     <lastmod>2020-09-07</lastmod>
@@ -129,6 +115,20 @@
   
   <url>
     <loc>https://blog.iseki.space/2020/06/10/use-pgp-with-git-on-windows/</loc>
+    
+    <lastmod>2020-09-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2019/12/08/use-shadow-gradle-plugin-gen-fatjar/</loc>
+    
+    <lastmod>2020-09-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2020/04/12/write-codegen-in-gradle/</loc>
     
     <lastmod>2020-09-07</lastmod>
     
