@@ -75,4 +75,4 @@ cn_PnPoly( Point P, Point V[], int n )
 
 [Jordan curve theorem]: https://zh.wikipedia.org/wiki/%E8%8B%A5%E5%B0%94%E5%BD%93%E6%9B%B2%E7%BA%BF%E5%AE%9A%E7%90%86	"若尔当曲线定理 (Jordan curve theorem)"
 
-~~*待续~*~~ 不会续了，楼主补数学去了
+~~*待续~*~~ 不会续了，楼主补数学去了，总之，这是一种优化过的转角法，它的性能并不差劲，数学证明部分我实在看不懂了 :cry:哭了，谁来救救我呢:cry:
