@@ -141,16 +141,16 @@ cover:
   # 當沒有設置cover時，默認的封面顯示
   default_cover: 
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - \imgs\randombg\1.png
-    - \imgs\randombg\2.png
-    - \imgs\randombg\3.png
-    - \imgs\randombg\4.png
-    - \imgs\randombg\5.png
-    - \imgs\randombg\6.png
-    - \imgs\randombg\7.png
-    - \imgs\randombg\8.png
-    - \imgs\randombg\9.png
-    - \imgs\randombg\10.png
+    - /imgs/randombg/1.png
+    - /imgs/randombg/2.png
+    - /imgs/randombg/3.png
+    - /imgs/randombg/4.png
+    - /imgs/randombg/5.png
+    - /imgs/randombg/6.png
+    - /imgs/randombg/7.png
+    - /imgs/randombg/8.png
+    - /imgs/randombg/9.png
+    - /imgs/randombg/10.png
 
 
 # Replace Broken Images (替換無法顯示的圖片)
