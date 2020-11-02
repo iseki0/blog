@@ -40,7 +40,12 @@ class:
       name: 吹梦到西洲
       descr: 有关于成长、生活与情感
       link: https://blog.loli.top/
-      avatar: Https://blog.loli.top/logo.png
+      avatar: https://blog.loli.top/logo.png
+    9:
+      name: Aloxaf's blog
+      descr: 一条咸鱼~
+      link: https://www.aloxaf.com/
+      avatar: https://avatars2.githubusercontent.com/u/17017672
 
 #     2:
 #       name: xxxxxx
