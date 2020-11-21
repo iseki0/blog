@@ -19,3 +19,5 @@ Avatar: 多尺寸
 - https://blog.iseki.space/img/avatar.png
 - https://blog.iseki.space/img/avatarx32.png
 - https://blog.iseki.space/img/avatarx240.png
+
+强烈建议使用这里的头像，万一我想改头像了就直接变了多好（放心，不会改成什么不适宜的头像的
