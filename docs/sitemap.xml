@@ -16,41 +16,6 @@
   </url>
   
   <url>
-    <loc>https://blog.iseki.space/2020/some-of-coroutine-suspend-function/</loc>
-    
-    <lastmod>2020-11-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iseki.space/2020/use-pgp-with-git-on-windows/</loc>
-    
-    <lastmod>2020-11-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iseki.space/2019/use-shadow-gradle-plugin-gen-fatjar/</loc>
-    
-    <lastmod>2020-11-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iseki.space/2020/write-codegen-in-gradle/</loc>
-    
-    <lastmod>2020-11-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.iseki.space/2020/stm32/stm32-with-swd/</loc>
-    
-    <lastmod>2020-11-21</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.iseki.space/2020/about-kotlinjs-react/</loc>
     
     <lastmod>2020-11-21</lastmod>
@@ -129,6 +94,41 @@
   
   <url>
     <loc>https://blog.iseki.space/2020/point-in-polygon/</loc>
+    
+    <lastmod>2020-11-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2020/some-of-coroutine-suspend-function/</loc>
+    
+    <lastmod>2020-11-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2020/use-pgp-with-git-on-windows/</loc>
+    
+    <lastmod>2020-11-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2019/use-shadow-gradle-plugin-gen-fatjar/</loc>
+    
+    <lastmod>2020-11-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2020/write-codegen-in-gradle/</loc>
+    
+    <lastmod>2020-11-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.iseki.space/2020/stm32/stm32-with-swd/</loc>
     
     <lastmod>2020-11-21</lastmod>
     
