@@ -64,7 +64,7 @@ jobs:
           git clean -xfd
           git switch website
           mv /tmp/docs ./
-          echo blog.iseki.space > CNAME
+          echo blog.iseki.space > docs/CNAME
           git add -A 
           git commit -am "Auto generate on Github Action at `date`"
           git push origin website
