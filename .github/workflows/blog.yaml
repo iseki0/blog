@@ -67,4 +67,4 @@ jobs:
           echo blog.iseki.space > CNAME
           git add -A 
           git commit -am "Auto generate on Github Action at `date`"
-          git push origin master 
+          git push origin website
