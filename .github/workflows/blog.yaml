@@ -61,7 +61,7 @@ jobs:
           hexo clean
           hexo g
           mv ./docs /tmp/
-          git stash
+          git clean -xfd
           git switch website
           mv /tmp/docs ./
           echo blog.iseki.space > CNAME
