@@ -55,6 +55,7 @@ jobs:
           echo AWSL
       - name: build
         run: |
+          npm install -g hexo
           yarn global add hexo
           yarn install
           hexo clean
