@@ -55,7 +55,7 @@ jobs:
           echo AWSL
       - name: build
         run: |
-          sudo yarn global add hexo
+          sudo yarn global add hexo-cli
           yarn install
           hexo clean
           hexo g
