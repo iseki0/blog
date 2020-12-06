@@ -63,6 +63,7 @@ jobs:
           mv ./docs /tmp/
           git clean -xfd
           git switch website
+          rm -rf ./docs
           mv /tmp/docs ./
           echo blog.iseki.space > docs/CNAME
           git add -A 
