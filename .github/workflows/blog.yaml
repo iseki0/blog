@@ -58,8 +58,8 @@ jobs:
           cd /tmp/blog
           sudo yarn global add hexo-cli
           yarn install
-          hexo-cli clean
-          hexo-cli g
+          hexo clean
+          hexo g
           mv ./docs /tmp/
           git stash
           git switch website
