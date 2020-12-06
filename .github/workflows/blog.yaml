@@ -65,6 +65,6 @@ jobs:
           git switch website
           mv /tmp/docs ./
           echo blog.iseki.space > CNAME
-          git add -a *
+          git add -A 
           git commit -am "Auto generate on Github Action at `date`"
           git push origin master 
