@@ -39,8 +39,8 @@ jobs:
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
       
-      - name: Install Node
-        uses: actions/setup-node@v2-beta
+      # - name: Install Node
+        # uses: actions/setup-node@v2-beta
         
       - name: install yarn
         uses: Borales/actions-yarn@v2.3.0
