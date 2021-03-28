@@ -4,12 +4,12 @@ class:
     1:
       name: counter2015
       link: https://counter2015.com
-      avatar: https://avatars0.githubusercontent.com/u/13608862?s=460&v=4
+      avatar: https://avatars0.githubusercontent.com/u/13608862
       descr: Not determined yet
     2:
       name: ajin
-      link: https://ajin.cloud/
-      avatar: https://avatars3.githubusercontent.com/u/41041690?s=460&v=4
+      link: https://blog.ajin.cloud/
+      avatar: https://avatars3.githubusercontent.com/u/41041690
       descr: Always be enthusiastic
     3:
       name: MorningP
@@ -50,7 +50,7 @@ class:
     10:
       name: 上海喫茶館
       descr: Linux和二次元爱好者聚集地
-      link: https://www.wallen.xyz/
+      link: https://wallena3.github.io/
       avatar: https://avatars.githubusercontent.com/u/11361768
     11:
       name: WhatZ的博客
