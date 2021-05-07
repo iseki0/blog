@@ -52,11 +52,11 @@ class:
       descr: Linux和二次元爱好者聚集地
       link: https://wallena3.github.io/
       avatar: https://avatars.githubusercontent.com/u/11361768
-    11:
-      name: WhatZ的博客
-      descr: 所以呢?
-      link: https://blog.guhub.top/
-      avatar: https://i.loli.net/2020/11/26/qiJMwZvk9GHFWr5.gif
+#    11:
+#      name: WhatZ的博客
+#      descr: 所以呢?
+#      link: https://blog.guhub.top/
+#      avatar: https://i.loli.net/2020/11/26/qiJMwZvk9GHFWr5.gif
 
 #     2:
 #       name: xxxxxx
@@ -64,14 +64,14 @@ class:
 #       avatar: https://xxxxx/avatar.png
 #       descr: xxxxxxx  
 
-#  class2:
-#    class_name: 鏈接無效
-#    link_list:
-#      1:
-#        name: 夢xxx
-#        link: https://blog.xxx.com
-#        avatar: https://xxxx/avatar.png
-#        descr: xxxx
+class2:
+  class_name: 失效链接
+  link_list:
+    1:
+#        name: WhatZ的博客
+#        descr: 所以呢?
+      link: https://blog.guhub.top/
+      avatar: https://i.loli.net/2020/11/26/qiJMwZvk9GHFWr5.gif
 #      2:
 #        name: xx
 #        link: https://www.axxxx.cn/
