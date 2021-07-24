@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在GitHub Action里设置 Hexo gen 的折腾笔记 | isekiのNote</title><meta name="keywords" content="github,action,nodejs,npm,hexo"><meta name="author" content="iseki,admin@iseki.space"><meta name="copyright" content="iseki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="不想阅读Github Action厚重的文档，用预配置好的NPM Action折腾了半天，终以失败告终。由于不熟悉NPM和Node.js，最后爆出的错误摸不到头脑，就此作罢。 寻找另一个方法，在 https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo&#x2F;actions&#x2F;new 中选择了跳过，自己设置一个空白的Workflow。  为了避免Action重新推送仓库后循环触发Action（不知Gith">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在GitHub Action里设置 Hexo gen 的折腾笔记">
+<meta property="og:url" content="https://blog.iseki.space/2019/10/github-action-hexo-gen/index.html">
+<meta property="og:site_name" content="isekiのNote">
+<meta property="og:description" content="不想阅读Github Action厚重的文档，用预配置好的NPM Action折腾了半天，终以失败告终。由于不熟悉NPM和Node.js，最后爆出的错误摸不到头脑，就此作罢。 寻找另一个方法，在 https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo&#x2F;actions&#x2F;new 中选择了跳过，自己设置一个空白的Workflow。  为了避免Action重新推送仓库后循环触发Action（不知Gith">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.iseki.space/img/randombg/8.png">
+<meta property="article:published_time" content="2019-10-17T14:44:00.000Z">
+<meta property="article:modified_time" content="2019-10-17T14:44:00.000Z">
+<meta property="article:author" content="iseki">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="action">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.iseki.space/img/randombg/8.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.iseki.space/2019/10/github-action-hexo-gen/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '在GitHub Action里设置 Hexo gen 的折腾笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2019-10-17 22:44:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=446315327"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/randombg/8.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">isekiのNote</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=446315327"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">在GitHub Action里设置 Hexo gen 的折腾笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-10-17T14:44:00.000Z" title="发表于 2019-10-17 22:44:00">2019-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-10-17T14:44:00.000Z" title="更新于 2019-10-17 22:44:00">2019-10-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">645</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="在GitHub Action里设置 Hexo gen 的折腾笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>不想阅读Github Action厚重的文档，用预配置好的NPM Action折腾了半天，终以失败告终。由于不熟悉NPM和Node.js，最后爆出的错误摸不到头脑，就此作罢。</p>
+<p>寻找另一个方法，在 <code>https://github.com/user/repo/actions/new</code> 中选择了跳过，自己设置一个空白的Workflow。</p>
+<ol>
+<li><p>为了避免Action重新推送仓库后循环触发Action（不知Github有没有对这种情况进行特殊处理）添加路径过滤器，仅当 <code>/source</code> 目录存在更新时才触发 Workflow</p>
+</li>
+<li><p>在仓库的 <code>Settings-&gt;Deploy keys</code> 里设置Github Action push时使用的SSH公钥，并赋予写权限，<code>Settings-&gt;Secrets</code> 里设置私钥的 Base64 编码。<br>私钥会通过环境变量传入Action的shell，<code>base64 -d</code> 即可解码，base64编码是为了避免潜在的回车换行符问题（环境变量里出现的换行符似乎不能正确地写入文件）</p>
+</li>
+<li><p>注意工作目录的问题，别瞎跑，目录会丢掉的</p>
+</li>
+<li><p><code>~/.ssh/id_rsa</code> 文件注意设定权限 <code>0600</code> 默认的权限过于宽松，SSH会不读取。</p>
+</li>
+<li><p><code>~/.ssh/config</code> 里需写入 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Host *</span><br><span class="line">    StrictHostKeyChecking no</span><br></pre></td></tr></table></figure>
+<p>否则可能会弹出要求确认SSH fingerprint的交互消息。</p>
+</li>
+<li><p>记得设定 <code>git config --global user.name/email</code> 否则无法提交</p>
+</li>
+<li><p>如果使用了自定义的域名，注意 <code>CNAME</code> 文件是否在 <code>hexo clean</code> 后被删除，可能需要自己写回去。</p>
+</li>
+<li><p>注意部分Hexo主题可能以 git submodule 方式引入， Github Action 克隆仓库时不会自动克隆子模块，导致生成的所有页面空白，Hexo只会给出警告而不是错误。</p>
+</li>
+</ol>
+<h3 id="附上自己写的workflow（糊成一坨，凑合能用）"><a href="#附上自己写的workflow（糊成一坨，凑合能用）" class="headerlink" title="附上自己写的workflow（糊成一坨，凑合能用）"></a>附上自己写的workflow（糊成一坨，凑合能用）</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Generate</span> <span class="string">Hexo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span> </span><br><span class="line">    <span class="attr">paths:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;source/**&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span> </span><br><span class="line">  <span class="attr">build:</span> </span><br><span class="line">    <span class="attr">name:</span> <span class="string">Refresh</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Node.js</span> <span class="string">and</span> <span class="string">NPM</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sudo apt-get install curl -y</span></span><br><span class="line"><span class="string">          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span></span><br><span class="line"><span class="string">          sudo apt-get install nodejs -y</span></span><br><span class="line"><span class="string">          echo &#x27;=====Show NPM version=====&#x27;</span></span><br><span class="line"><span class="string">          npm -v</span></span><br><span class="line"><span class="string">          echo &#x27;=====Show Node.js version=====&#x27;</span></span><br><span class="line"><span class="string">          node -v</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sudo npm install -g hexo-cli</span></span><br><span class="line"><span class="string">          echo &#x27;=====Show HEXO version=====&#x27;</span></span><br><span class="line"><span class="string">          hexo -v</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Prepare</span> <span class="string">Key</span> <span class="string">and</span> <span class="string">SSH</span> <span class="string">config</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          mkdir ~/.ssh</span></span><br><span class="line"><span class="string">          echo $DEPLOY_PRIVKEY | base64 -d &gt; ~/.ssh/id_rsa</span></span><br><span class="line"><span class="string">          chmod 0600 ~/.ssh/id_rsa</span></span><br><span class="line"><span class="string">          echo &#x27;Host *&#x27; &gt;&gt; ~/.ssh/config</span></span><br><span class="line"><span class="string">          echo &#x27;    StrictHostKeyChecking no&#x27; &gt;&gt; ~/.ssh/config</span></span><br><span class="line"><span class="string">          chmod 0600 ~/.ssh/config</span></span><br><span class="line"><span class="string"></span>        <span class="attr">env:</span> </span><br><span class="line">          <span class="attr">DEPLOY_PRIVKEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.DEPLOY_PRIVKEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Clone</span> <span class="string">git</span> <span class="string">repo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          cd ~</span></span><br><span class="line"><span class="string">          echo &#x27;=====Show work path=====&#x27;</span></span><br><span class="line"><span class="string">          pwd</span></span><br><span class="line"><span class="string">          git clone git@github.com:cpdyj/blog.git</span></span><br><span class="line"><span class="string">          cd blog</span></span><br><span class="line"><span class="string">          ls</span></span><br><span class="line"><span class="string">          echo &#x27;=====Show work path=====&#x27;</span></span><br><span class="line"><span class="string">          pwd</span></span><br><span class="line"><span class="string">          cat ./package.json</span></span><br><span class="line"><span class="string">          npm install</span></span><br><span class="line"><span class="string">          npm audit fix</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo g</span></span><br><span class="line"><span class="string">          echo &quot;blog.iseki.space&quot; &gt; ./docs/CNAME</span></span><br><span class="line"><span class="string">          git config --global user.name &quot;User name&quot;</span></span><br><span class="line"><span class="string">          git config --global user.email &quot;Email@example.com&quot;</span></span><br><span class="line"><span class="string">          git add docs</span></span><br><span class="line"><span class="string">          git commit -am &quot;Auto generate on Github Action at `date`&quot;</span></span><br><span class="line"><span class="string">          git push</span></span><br></pre></td></tr></table></figure>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/github/">github</a><a class="post-meta__tags" href="/tags/action/">action</a><a class="post-meta__tags" href="/tags/nodejs/">nodejs</a><a class="post-meta__tags" href="/tags/npm/">npm</a><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post_share"></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%84%E4%B8%8A%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84workflow%EF%BC%88%E7%B3%8A%E6%88%90%E4%B8%80%E5%9D%A8%EF%BC%8C%E5%87%91%E5%90%88%E8%83%BD%E7%94%A8%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">附上自己写的workflow（糊成一坨，凑合能用）</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By iseki</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

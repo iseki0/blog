@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>isekiのNote</title><meta name="author" content="iseki,admin@iseki.space"><meta name="copyright" content="iseki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这里是 iseki 的笔记本呢~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="isekiのNote">
+<meta property="og:url" content="https://blog.iseki.space/index.html">
+<meta property="og:site_name" content="isekiのNote">
+<meta property="og:description" content="这里是 iseki 的笔记本呢~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.iseki.space/img/avatar.png">
+<meta property="article:author" content="iseki">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.iseki.space/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.iseki.space/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":90,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'isekiのNote',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-07-24 17:59:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=446315327"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/topimg.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">isekiのNote</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=446315327"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">isekiのNote</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/cpdyj" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:admin@iseki.space" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/think-of-community/" title="最近发生的事情的一点感想吧">     <img class="post_bg" src="/img/randombg/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最近发生的事情的一点感想吧"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/think-of-community/" title="最近发生的事情的一点感想吧">最近发生的事情的一点感想吧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-29T16:35:00.000Z" title="发表于 2021-04-30 00:35:00">2021-04-30</time></span></div><div class="content">iseki没有参与过太多的开源项目，但就iseki观察过的来看，不知道为什么，国人项目，尤其是直接面向最终用户的，好多都变成了粉圈，或者类似粉圈的“个人项目”；而其他项目则显得更正规一点，或者说，更像一个“社区”。也可能是两边项目的规模不是很一致吧。
+个人项目嘛，就不该有这么多要求，主开发者自己是什么想法，那整个项目就是什么样，你觉得这不行，那就先把它变成一个“社区驱动”的项目。平时都是“个人”驱动，到某些节点突然“社区”起来，这难免会产生很多问题。
+嗨，说的容易，社区项目，不是你加了个 Code of Conduct，把 Github 上描述改成 “Community driven” 它就变成了社区驱动。最后还是要看到底是一个人在干活，还是一群人在搞。一直是一个人在搞，他就没法不膨胀，哪怕他自己没有别的想法，个人崇拜的粉丝也会把他黄袍加身。结果就是整个社区只能围着一个人转，当他做出一些非常有个性的行为时，也没有太好的办法，毕竟 “你把主要 maintainer 踢了，以后谁来写？”（未完待续）
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/stm32/stm32-with-swd/" title="使用STM32CubeIDE通过SWD调试STM32F103">     <img class="post_bg" src="/img/randombg/7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用STM32CubeIDE通过SWD调试STM32F103"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/stm32/stm32-with-swd/" title="使用STM32CubeIDE通过SWD调试STM32F103">使用STM32CubeIDE通过SWD调试STM32F103</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-26T11:39:19.000Z" title="发表于 2020-09-26 19:39:19">2020-09-26</time></span></div><div class="content">要准备的东西
+STM32CubeIDE
+OpenOCD
+CMSIS-DAP 调试器
+STM32开发板（我用的STM32F103）
+
+步骤去Cube里开个项目，生成代码时注意要在 Pinout &amp; Configuration / System Core / SYS 中把 Debug 调整成 Serial Wire
+运行 openocd -f interface/cmsis-dap.cfg -f target/stm32f1x_stlink.cfg （注意要确保线路接好，且调试器/开发板 都已经上电允许，否则openocd起不来）
+OpenOCD是一种开源调试方案，除此之外还支持大量目标平台和调试器，可在 script 目录下查看
+回到CubeIDE，在 Run / Debug Configuration… 中添加一个Debug配置，注意GDB端口要和openocd的端口一致
+
+要确保线路接好， 否则出各种诡异问题emmm，如果调试迟迟不能成功，尝试手动复位，应该可看到OpenOCD输出诸如 Info : stm32f1x.cpu: external reset detected  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/some-of-coroutine-suspend-function/" title="浅扯 Coroutine">     <img class="post_bg" src="/img/randombg/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浅扯 Coroutine"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/some-of-coroutine-suspend-function/" title="浅扯 Coroutine">浅扯 Coroutine</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-20T11:30:00.000Z" title="发表于 2020-07-20 19:30:00">2020-07-20</time></span></div><div class="content">浅扯 Coroutine关于 Kotlin Coroutine 的使用就不多说了，大家都已经很熟悉emmm，这里简单探索下 Coroutine 内部的实现，来尽量规避Coroutine 与其他库和框架协同使用时的坑。
+本文编写时使用 Kotlin 版本：1.4-M3，JDK 版本：openjdk 11.0.7
+Coroutine 的核心原理 KEEP 中的 coroutine 提案已经写得很清楚了，详见提案的实现详情章节： KEEP/proposals/coroutines.md#implementation-details ，这里补充一点点提案中没说的，和实现高度相关的内容。
+本质就是对 suspend 函数进行CPS变换，将代码转换为延续体传递风格。简单来说就是为每个函数增加了一个隐式的参数 $completion，它的类型是 Continuation 即延续体；函数本体则被编译成状态机，状态存储于上述的 Continuation 中，suspend 函数每次 resume 时都会被调用，其根据 Continuation 中的状态信息直接调转到对应的位置继续执行。
+为了便于分析，这 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/use-pgp-with-git-on-windows/" title="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项">     <img class="post_bg" src="/img/randombg/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/use-pgp-with-git-on-windows/" title="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项">在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-10T16:00:00.000Z" title="发表于 2020-06-11 00:00:00">2020-06-11</time></span></div><div class="content">在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项可能和 Git for Windows 在安装时的选项有关，需要注意默认情况下 git 可能不会使用 Windows 中安装的 gpg.exe，这必然会导致找不到key。（要不是因为看到了gpg的初始化输出我打死也想不到是这个问题）
+git config --global gpg.program &quot;c:/Program Files (x86)/GnuPG/bin/gpg.exe&quot; 即可，注意看准了自己机器上的路径是啥。
+另 git config commit.gpgsign true 即可设置该仓库默认签名提交，IDEA里 commit 时就会弹出 Git for windows 的密钥窗口了。
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/charset-clion-msvc/" title="解决 CLion + MSVC 下的字符编码问题">     <img class="post_bg" src="/img/randombg/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决 CLion + MSVC 下的字符编码问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/charset-clion-msvc/" title="解决 CLion + MSVC 下的字符编码问题">解决 CLion + MSVC 下的字符编码问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-31T13:00:00.000Z" title="发表于 2020-05-31 21:00:00">2020-05-31</time></span></div><div class="content">解决 CLion + MSVC 下的字符编码问题第一次这么用，上来字符编码就炸了，不出意外 log 中会出现如下内容
+1warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+
+然后就是诡异的编译失败语法错误，比如换行符、分号等等
+原因是 CLion 默认使用 UTF-8 编码，MSVC 继承了 MS 家族的一贯传统，除非明确指定否则要么 UTF-8 with BOM 要么当前代码页。
+解决办法也简单，加上命令行开关就行了： /utf-8 或者 source-charset:utf-8 /execution-charset:utf-8 参见MSVC文档&gt;&gt;
+默认创建的项目是 CMake 的，在 CMakeList.txt 中加入如下内容即可
+12add_compile_options(&quot;$&lt;$&lt;C_COMPILER_ID:MSVC&gt;:/utf-8&gt;&quot;)add_compile_options(&quot;$&lt;$&lt;CXX_COMPILER_ID: ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/awsl/" title="iseki根本不会写blog呢">     <img class="post_bg" src="/img/randombg/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="iseki根本不会写blog呢"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/awsl/" title="iseki根本不会写blog呢">iseki根本不会写blog呢</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-21T15:33:10.000Z" title="发表于 2020-04-21 23:33:10">2020-04-21</time></span></div><div class="content">iseki 哪里会写博客呢…连什么是博客都说不清楚…只能时不时发发牢骚了…人逐渐的婆婆妈妈…愈发变得无聊…
+再看看前面的路…不知该干什么，也不知该走向何方呢。
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/gradle-execute-jar/" title="Gradle 里执行 Jar 的几种办法">     <img class="post_bg" src="/img/randombg/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Gradle 里执行 Jar 的几种办法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/gradle-execute-jar/" title="Gradle 里执行 Jar 的几种办法">Gradle 里执行 Jar 的几种办法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-11T12:44:00.000Z" title="发表于 2020-04-11 20:44:00">2020-04-11</time></span></div><div class="content">
+Gradle 这个东西真是让人头大······ 这里权当留个笔记备忘了，改日要好好学习下 Gradle
+
+之前只用过 application 插件，结果用了 Kotlin MPP 后那个插件似乎失效了，虽然应该有办法通过手动配置继续使用那个插件，但是考虑到自己完全不熟悉 Gradle 还是不多折腾了···
+以下内容来自 StackOverflow……
+1234567891011tasks.create(&quot;execute&quot;) &#123;    dependsOn(tasks.getByName(&quot;jvmJar&quot;))    doLast &#123;        javaexec &#123;            this.main = &quot;-jar&quot;            val file = File(buildDir.absolutePath + &quot;/libs/project-jvm-0.0.1.jar&quot;)            println(&quot;Execute Jar: &quot; + ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/12/use-shadow-gradle-plugin-gen-fatjar/" title="使用 Gradle Shadow 插件生成 Fat-Jar">     <img class="post_bg" src="/img/randombg/7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Gradle Shadow 插件生成 Fat-Jar"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/12/use-shadow-gradle-plugin-gen-fatjar/" title="使用 Gradle Shadow 插件生成 Fat-Jar">使用 Gradle Shadow 插件生成 Fat-Jar</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-12-08T10:27:59.000Z" title="发表于 2019-12-08 18:27:59">2019-12-08</time></span></div><div class="content">使用 Gradle Shadow 插件生成 Fat-Jar在网络上找了好一阵子，最终发现了 Gradle Shadow 这个插件，用起来很方便：
+首先需要修改 gradle 的 buildscript 来引入这个依赖，这个东西 IDEA 默认生成的 Kotlin 项目没有，自己加进去:
+123456789buildscript &#123;    repositories &#123;        jcenter()    &#125;    dependencies &#123;        // 这里目前的版本号是 5.2.0 ，对应 Gradle 版本 5.x ，较低的版本可能无法使用        classpath(&quot;com.github.jengelman.gradle.plugins:shadow:5.2.0&quot;)    &#125;&#125;
+然后在 plugins 中加入这个插件就行了：
+123plugins&#123;    id(&quot;com.github.johnrengelman.shadow&quot;) version &qu ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/11/pgpkey/" title="我的 PGP Key">     <img class="post_bg" src="/img/randombg/8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的 PGP Key"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/11/pgpkey/" title="我的 PGP Key">我的 PGP Key</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-01T13:00:00.000Z" title="发表于 2019-11-01 21:00:00">2019-11-01</time></span></div><div class="content">我的 PGP Key 又双叒叕更换了iseki 总是不能妥善的保管自己的 key 呢
+新 Key: 
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859-----BEGIN PGP PUBLIC KEY BLOCK-----Comment: 用户编号:	iseki &lt;admin@iseki.space&gt;Comment: 连接时间:	2020/5/12 16:32Comment: 过期时间:	2024/5/11 16:32Comment: 文件系统:	4096 位 RSA(绝密密钥可用)Comment: 用途:	签名, 仅加密, 正在认证的用户编号Comment: 指纹:	CE31AA9B872B869FC6C382F81A121A94A213EF73mQINBF66XycBEAC4QuiiL2FUqHBLTzstrzOi4hHtV2pCIM8K09vEjZbtt73d4reJdH98r/HVtgXd2ANfz ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/10/dalao/" title="大佬们实在是太聚聚了，萌新咋活啊😐">     <img class="post_bg" src="/img/randombg/7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="大佬们实在是太聚聚了，萌新咋活啊😐"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/10/dalao/" title="大佬们实在是太聚聚了，萌新咋活啊😐">大佬们实在是太聚聚了，萌新咋活啊😐</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-18T01:54:00.000Z" title="发表于 2019-10-18 09:54:00">2019-10-18</time></span></div><div class="content">感觉自己完了呢…
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">iseki</div><div class="author-info__description">这里是 iseki 的笔记本呢~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cpdyj" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:admin@iseki.space" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/04/think-of-community/" title="最近发生的事情的一点感想吧"><img src="/img/randombg/2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最近发生的事情的一点感想吧"/></a><div class="content"><a class="title" href="/2021/04/think-of-community/" title="最近发生的事情的一点感想吧">最近发生的事情的一点感想吧</a><time datetime="2021-04-29T16:35:00.000Z" title="发表于 2021-04-30 00:35:00">2021-04-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/09/stm32/stm32-with-swd/" title="使用STM32CubeIDE通过SWD调试STM32F103"><img src="/img/randombg/7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用STM32CubeIDE通过SWD调试STM32F103"/></a><div class="content"><a class="title" href="/2020/09/stm32/stm32-with-swd/" title="使用STM32CubeIDE通过SWD调试STM32F103">使用STM32CubeIDE通过SWD调试STM32F103</a><time datetime="2020-09-26T11:39:19.000Z" title="发表于 2020-09-26 19:39:19">2020-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/some-of-coroutine-suspend-function/" title="浅扯 Coroutine"><img src="/img/randombg/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浅扯 Coroutine"/></a><div class="content"><a class="title" href="/2020/07/some-of-coroutine-suspend-function/" title="浅扯 Coroutine">浅扯 Coroutine</a><time datetime="2020-07-20T11:30:00.000Z" title="发表于 2020-07-20 19:30:00">2020-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/use-pgp-with-git-on-windows/" title="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项"><img src="/img/randombg/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项"/></a><div class="content"><a class="title" href="/2020/06/use-pgp-with-git-on-windows/" title="在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项">在 Windows 上使用 OpenPGP 签署 Git 提交的一点点注意事项</a><time datetime="2020-06-10T16:00:00.000Z" title="发表于 2020-06-11 00:00:00">2020-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/05/charset-clion-msvc/" title="解决 CLion + MSVC 下的字符编码问题"><img src="/img/randombg/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决 CLion + MSVC 下的字符编码问题"/></a><div class="content"><a class="title" href="/2020/05/charset-clion-msvc/" title="解决 CLion + MSVC 下的字符编码问题">解决 CLion + MSVC 下的字符编码问题</a><time datetime="2020-05-31T13:00:00.000Z" title="发表于 2020-05-31 21:00:00">2020-05-31</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/action/" style="font-size: 1.1em; color: #999">action</a> <a href="/tags/coroutine/" style="font-size: 1.1em; color: #999">coroutine</a> <a href="/tags/dalao/" style="font-size: 1.1em; color: #999">dalao</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/github/" style="font-size: 1.1em; color: #999">github</a> <a href="/tags/gpg/" style="font-size: 1.1em; color: #999">gpg</a> <a href="/tags/gradle/" style="font-size: 1.5em; color: #99a9bf">gradle</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/idea/" style="font-size: 1.1em; color: #999">idea</a> <a href="/tags/jar/" style="font-size: 1.1em; color: #999">jar</a> <a href="/tags/java/" style="font-size: 1.1em; color: #999">java</a> <a href="/tags/kapt/" style="font-size: 1.1em; color: #999">kapt</a> <a href="/tags/kotlin/" style="font-size: 1.5em; color: #99a9bf">kotlin</a> <a href="/tags/nodejs/" style="font-size: 1.1em; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 1.1em; color: #999">npm</a> <a href="/tags/openpgp/" style="font-size: 1.1em; color: #999">openpgp</a> <a href="/tags/pgp/" style="font-size: 1.3em; color: #99a1ac">pgp</a> <a href="/tags/pin/" style="font-size: 1.1em; color: #999">pin</a> <a href="/tags/text/" style="font-size: 1.1em; color: #999">text</a> <a href="/tags/think/" style="font-size: 1.1em; color: #999">think</a> <a href="/tags/window/" style="font-size: 1.1em; color: #999">window</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">十二月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/11/"><span class="card-archive-list-date">十一月 2019</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2019-10-17T00:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">4.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-07-24T09:59:13.108Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By iseki</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
