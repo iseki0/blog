@@ -19,8 +19,12 @@ jobs:
           pwd
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
+          echo === hexo clean ===
           pnpm hexo clean
+          echo === hexo generate ===
           pnpm hexo g
+          echo === mv docs ===
+          ls
           mv docs /tmp
           git stash
           git switch website
