@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: generate
         run: |
+          ls
           pwd
           ls
           echo WTF???
