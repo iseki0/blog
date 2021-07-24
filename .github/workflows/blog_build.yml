@@ -24,8 +24,8 @@ jobs:
           echo === hexo generate ===
           pnpm hexo g
           echo === mv docs ===
-          ls
           mv docs /tmp
+          git add .
           git stash
           git fetch origin website:website --depth 1
           git checkout website
