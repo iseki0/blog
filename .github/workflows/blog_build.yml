@@ -14,16 +14,19 @@ jobs:
         run: |
           npm install -g pnpm 
           pnpm i
-      - name: generate
+      - name: prepare
         run: |
           pwd
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
-          echo === hexo clean ===
+      - name: hexo clean
+        run: |
           pnpm hexo clean
-          echo === hexo generate ===
+      - name: generate
+        run: |
           pnpm hexo g
-          echo === mv docs ===
+      - name: prepare commit
+        run: |
           mv docs /tmp
           git add .
           git stash
@@ -31,7 +34,7 @@ jobs:
           git checkout website
           rm -rf docs
           mv /tmp/docs .
-          echo blog.iseki.space > docs/CNAME
-          git add .
+      - name: commit and push
+        run: |
           git commit -am "Auto generate on Github Action at `date`"
           git push origin website
