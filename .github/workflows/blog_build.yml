@@ -12,6 +12,7 @@ jobs:
       - name: generate
         run: |
           pwd
+          ls
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
           pnpm hexo clean
