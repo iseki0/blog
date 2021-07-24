@@ -7,14 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: iseki0/blog-ci
+      image: node
     steps:
       - uses: actions/checkout@v2
       - name: generate
         run: |
           pwd
-          ls
-          ls /root/.pnpm-store/v3
+          npm install -g pnpm
           pnpm i --offline
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
