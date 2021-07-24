@@ -1,0 +1,25 @@
+name: Build Blog Hexo
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    container: 
+      image: iseki0/blog-ci
+    steps:
+      - generate
+        run: |
+          pwd
+          git config --global user.name "My Github Action"
+          git config --global user.email "no-reply@iseki.space"
+          pnpm hexo clean
+          pnpm hexo g
+          mv docs /tmp
+          git stash
+          git switch website
+          mv /tmp/docs .
+          echo blog.iseki.space > docs/CNAME
+          git add .
+          git commit -am "Auto generate on Github Action at `date`"
+          git push origin website
