@@ -10,11 +10,13 @@ jobs:
       image: node
     steps:
       - uses: actions/checkout@v2
+      - name: install
+        run: |
+          npm install -g pnpm
+          pnpm i
       - name: generate
         run: |
           pwd
-          npm install -g pnpm
-          pnpm i --offline
           git config --global user.name "My Github Action"
           git config --global user.email "no-reply@iseki.space"
           pnpm hexo clean
