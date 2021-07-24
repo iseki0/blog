@@ -26,11 +26,13 @@ jobs:
           echo === mv docs ===
           ls
           mv docs /tmp
+          mv .gitignore /tmp
           git stash
           git fetch origin website:website --depth 1
           git checkout website
           rm -rf docs
           mv /tmp/docs .
+          mv /tmp/.gitignore .
           echo blog.iseki.space > docs/CNAME
           git add .
           git commit -am "Auto generate on Github Action at `date`"
