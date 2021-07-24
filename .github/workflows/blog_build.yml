@@ -36,6 +36,7 @@ jobs:
           mv /tmp/docs .
       - name: commit and push
         run: |
+          echo blog.iseki.space > docs/CNAME
           git add .
           git commit -am "Auto generate on Github Action at `date`"
           git push origin website
