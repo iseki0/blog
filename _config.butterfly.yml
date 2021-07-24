@@ -112,7 +112,7 @@ aside:
     link: https://github.com/cpdyj/
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 公告？没啥可写的
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
