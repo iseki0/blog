@@ -27,7 +27,7 @@ jobs:
           ls
           mv docs /tmp
           git stash
-          git switch website
+          git checkout -b website origin/website
           mv /tmp/docs .
           echo blog.iseki.space > docs/CNAME
           git add .
