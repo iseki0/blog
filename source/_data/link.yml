@@ -6,11 +6,11 @@ class:
       link: https://counter2015.com
       avatar: https://avatars0.githubusercontent.com/u/13608862
       descr: Not determined yet
-    2:
-      name: ajin
-      link: https://blog.ajin.cloud/
-      avatar: https://avatars3.githubusercontent.com/u/41041690
-      descr: Always be enthusiastic
+    # 2:
+    #   name: ajin
+    #   link: https://blog.ajin.cloud/
+    #   avatar: https://avatars3.githubusercontent.com/u/41041690
+    #   descr: Always be enthusiastic
     3:
       name: MorningP
       descr: 一个技术弱鸡的碎碎念
@@ -68,6 +68,13 @@ class2:
       descr: Linux和二次元爱好者聚集地
       link: https://wallena3.github.io/
       avatar: https://avatars.githubusercontent.com/u/11361768
+    3:
+      name: ajin
+      # link: https://blog.ajin.cloud/
+      link: https://example.com/
+      avatar: https://avatars3.githubusercontent.com/u/41041690
+      descr: Always be enthusiastic
+
 #      2:
 #        name: xx
 #        link: https://www.axxxx.cn/
