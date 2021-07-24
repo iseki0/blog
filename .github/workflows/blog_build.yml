@@ -1,14 +1,14 @@
 name: Build Blog Hexo
-on: 
+on:
   push:
     branches:
       - master
 jobs:
   build:
-    container: 
+    container:
       image: iseki0/blog-ci
     steps:
-      - generate
+      - name: generate
         run: |
           pwd
           git config --global user.name "My Github Action"
