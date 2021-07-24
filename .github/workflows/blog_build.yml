@@ -5,6 +5,7 @@ on:
       - master
 jobs:
   build:
+    runs-on: ubuntu-latest
     container:
       image: iseki0/blog-ci
     steps:
