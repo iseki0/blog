@@ -27,7 +27,8 @@ jobs:
           ls
           mv docs /tmp
           git stash
-          git checkout -b website origin/website
+          git fetch origin website:website --depth 1
+          git checkout website
           mv /tmp/docs .
           echo blog.iseki.space > docs/CNAME
           git add .
