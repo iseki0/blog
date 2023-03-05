@@ -619,6 +619,15 @@ hexo-generator-index@^3.0.0:
   dependencies:
     hexo-pagination "3.0.0"
 
+hexo-generator-sitemap@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hexo-generator-sitemap/-/hexo-generator-sitemap-3.0.1.tgz#6183995f918330c06d99aa18ca9de81dd8055841"
+  integrity sha512-n+0KLNmq6TLbiZPTQF6NY5MbEem/O+DFx0lgQZNQcU4tdjXIZRrQJs+KRKeT66NTkdlYTqb4WwCxswLqQz0crA==
+  dependencies:
+    hexo-util "^2.1.0"
+    micromatch "^4.0.2"
+    nunjucks "^3.1.6"
+
 hexo-generator-tag@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hexo-generator-tag/-/hexo-generator-tag-2.0.0.tgz#f5a18c92b2f28063a76008b4090a7cea81fbbcc0"
@@ -701,7 +710,7 @@ hexo-theme-next@^8.14.2:
   resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.14.2.tgz#a7fc2170a2d370b7b7a6ac2927ddce323cc08554"
   integrity sha512-XF0xocZmXNTqqPZJuBkwfDFyR51kDFWFxdp9xNN1voUduGROYrTTHaM0IFklhdK0cAjIX0EG+FndtU/5SHZkMg==
 
-hexo-util@^2.0.0, hexo-util@^2.7.0:
+hexo-util@^2.0.0, hexo-util@^2.1.0, hexo-util@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-2.7.0.tgz#13d09292e79d260db35399710b3e19f3995443a3"
   integrity sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==
@@ -959,7 +968,7 @@ micro-memoize@^4.0.11:
   resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.0.14.tgz#d1239ce2e5831125ac518509f5a23b54e7ca3e17"
   integrity sha512-2tzWP1w2Hh+r7kCYa4f//jpBEA6dAueiuLco38NxfjF9Py3KCCI7wVOTdCvOhmTC043t+ulclVBdl3v+s+UJIQ==
 
-micromatch@^4.0.4:
+micromatch@^4.0.2, micromatch@^4.0.4:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.5.tgz#bc8999a7cbbf77cdc89f132f6e467051b49090c6"
   integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
@@ -1082,7 +1091,7 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-nunjucks@^3.2.3:
+nunjucks@^3.1.6, nunjucks@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.2.3.tgz#1b33615247290e94e28263b5d855ece765648a31"
   integrity sha512-psb6xjLj47+fE76JdZwskvwG4MYsQKXUtMsPh6U0YMvmyjRtKRFcxnlXGWglNybtNTNVmGdp94K62/+NjF5FDQ==
