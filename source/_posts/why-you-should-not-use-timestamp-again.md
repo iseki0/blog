@@ -60,6 +60,6 @@ tags:
 
 > 总结一下，我是说请使用 `2023-09-03T23:00:00+08:00` 或者 `2023-09-03T18:00:00Z` 作为传输格式。
 
-[UNIX time]: https://en.wikipedia.org/wiki/Unix_time
-[ISO 8601]: https://en.wikipedia.org/wiki/ISO_8601
-[RFC 3339]: https://datatracker.ietf.org/doc/html/rfc3339
+[UNIX time]: https://en.wikipedia.org/wiki/Unix_time 
+[ISO 8601]: https://en.wikipedia.org/wiki/ISO_8601 "ISO 8601: Data elements and interchange formats"
+[RFC 3339]: https://datatracker.ietf.org/doc/html/rfc3339 "RFC 3339: Date and Time on the Internet: Timestamps"
